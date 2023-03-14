@@ -1,0 +1,54 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = []
+}
+
+generator dbml {
+  provider = "prisma-dbml-generator"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email     String   @unique
+  password  String
+  name        String
+  role      Role
+}
+
+model ApplicationForDistributionSystem  {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+ status    STATUS?
+  name String
+  email String
+  mobileNumber  String
+  applicantAddress String
+  applicantType  ApplicantType
+  firmName    String
+  State      String
+  District  String
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum STATUS {
+  PENDING
+  ACCEPT
+  REJECT
+}
+
+enum ApplicantType {
+  DISTRIBUTOR
+  STOCKIST
+}

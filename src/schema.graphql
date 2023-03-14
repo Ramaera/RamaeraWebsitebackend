@@ -1,0 +1,122 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Applicant {
+  District: String!
+  State: String!
+  applicantAddress: String!
+  applicantType: ApplicantType!
+  email: String!
+  firmName: String!
+  mobileNumber: String!
+  name: String
+}
+
+enum ApplicantType {
+  DISTRIBUTOR
+  STOCKIST
+}
+
+type Auth {
+  """JWT access token"""
+  accessToken: JWT!
+
+  """JWT refresh token"""
+  refreshToken: JWT!
+  user: User!
+}
+
+input ChangePasswordInput {
+  newPassword: String!
+  oldPassword: String!
+}
+
+input CreateApplicantInput {
+  District: String
+  State: String
+  applicantAddress: String
+  applicantType: ApplicantType
+  email: String
+  firmName: String
+  mobileNumber: String
+  name: String
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+"""
+A field whose value is a JSON Web Token (JWT): https://jwt.io/introduction.
+"""
+scalar JWT
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  changePassword(data: ChangePasswordInput!): User!
+  createApplicant(data: CreateApplicantInput!): Applicant!
+  createApplication(data: CreateApplicantInput!): Applicant!
+  login(data: LoginInput!): Auth!
+  refreshToken(token: JWT!): Token!
+  removeApplicant(id: Int!): Applicant!
+  updateApplicant(updateApplicantInput: UpdateApplicantInput!): Applicant!
+  updateUser(data: UpdateUserInput!): User!
+}
+
+type Query {
+  applicant(id: Int!): Applicant!
+  applicants: [Applicant!]!
+  hello(name: String!): String!
+  helloWorld: String!
+  me: User!
+}
+
+"""User role"""
+enum Role {
+  ADMIN
+  USER
+}
+
+type Token {
+  """JWT access token"""
+  accessToken: JWT!
+
+  """JWT refresh token"""
+  refreshToken: JWT!
+}
+
+input UpdateApplicantInput {
+  District: String
+  State: String
+  applicantAddress: String
+  applicantType: ApplicantType
+  email: String
+  firmName: String
+  id: Int!
+  mobileNumber: String
+  name: String
+}
+
+input UpdateUserInput {
+  firstname: String
+  lastname: String
+}
+
+type User {
+  """Identifies the date and time when the object was created."""
+  createdAt: DateTime!
+  email: String!
+  firstname: String
+  id: ID!
+  lastname: String
+  role: Role!
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
+}
