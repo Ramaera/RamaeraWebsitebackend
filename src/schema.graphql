@@ -33,6 +33,14 @@ input ChangePasswordInput {
   oldPassword: String!
 }
 
+type ContactUsRepsonse {
+  Subject: String!
+  company: String!
+  email: String!
+  message: String!
+  name: String!
+}
+
 input CreateApplicantInput {
   District: String
   State: String
@@ -43,6 +51,16 @@ input CreateApplicantInput {
   firmName: String
   mobileNumber: String
   name: String
+}
+
+input CreateContactUsRepsonseInput {
+  Subject: String!
+  company: String!
+  email: String!
+  message: String!
+
+  """Example field (placeholder)"""
+  name: String!
 }
 
 input CreateProjectInput {
@@ -77,6 +95,7 @@ type Mutation {
   CreateProject(data: CreateProjectInput!): Project!
   changePassword(data: ChangePasswordInput!): User!
   createApplication(data: CreateApplicantInput!): Applicant!
+  createContactUsResponse(data: CreateContactUsRepsonseInput!): ContactUsRepsonse!
   login(data: LoginInput!): Auth!
   refreshToken(token: JWT!): Token!
   signup(data: SignupInput!): Auth!
@@ -91,6 +110,7 @@ type Project {
 
 type Query {
   applicants: [Applicant!]!
+  contactUsRepsonses: [ContactUsRepsonse!]!
 }
 
 """User role"""

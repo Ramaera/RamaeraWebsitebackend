@@ -25,6 +25,7 @@ Table ApplicationForDistributionSystem {
   firmName String [not null]
   State String [not null]
   District String [not null]
+  extraInfo String
 }
 
 Table Project {
@@ -59,6 +60,15 @@ Table Director {
   projectId String [not null]
   directorName String [not null]
   basicIntro String [not null]
+}
+
+Table ContactusResponse {
+  id String [pk]
+  name String [not null]
+  email String [not null]
+  company String
+  Subject String
+  message String
 }
 
 Enum Role {
