@@ -15,7 +15,7 @@ const graphql_1 = require("@nestjs/graphql");
 const client_1 = require("@prisma/client");
 let Applicant = class Applicant {
     static _OPENAPI_METADATA_FACTORY() {
-        return { name: { required: true, type: () => String }, email: { required: true, type: () => String }, mobileNumber: { required: true, type: () => String }, applicantAddress: { required: true, type: () => String }, applicantType: { required: true, type: () => Object }, firmName: { required: true, type: () => Object }, State: { required: true, type: () => Object }, District: { required: true, type: () => String } };
+        return { name: { required: true, type: () => String }, email: { required: true, type: () => String }, mobileNumber: { required: true, type: () => String }, applicantAddress: { required: true, type: () => String }, applicantType: { required: true, type: () => Object }, firmName: { required: true, type: () => Object }, State: { required: true, type: () => Object }, District: { required: true, type: () => String }, extraInfo: { required: false, type: () => String } };
     }
     static _GRAPHQL_METADATA_FACTORY() {
         return {};
@@ -53,6 +53,10 @@ __decorate([
     (0, graphql_1.Field)(() => String, {}),
     __metadata("design:type", String)
 ], Applicant.prototype, "District", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => String, { nullable: true }),
+    __metadata("design:type", String)
+], Applicant.prototype, "extraInfo", void 0);
 Applicant = __decorate([
     (0, graphql_1.ObjectType)()
 ], Applicant);

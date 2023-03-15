@@ -28,6 +28,11 @@ export class Applicant {
 
   @Field(() => String)
   District : string  
+
+  @Field(() => String)
+  extraInfo? : string  
+
+
 }
 
 

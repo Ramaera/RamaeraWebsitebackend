@@ -8,6 +8,7 @@ type Applicant {
   applicantAddress: String!
   applicantType: ApplicantType!
   email: String!
+  extraInfo: String
   firmName: String!
   mobileNumber: String!
   name: String
@@ -38,6 +39,7 @@ input CreateApplicantInput {
   applicantAddress: String
   applicantType: ApplicantType
   email: String
+  extraInfo: String
   firmName: String
   mobileNumber: String
   name: String

@@ -29,7 +29,7 @@ model ApplicationForDistributionSystem  {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- status    STATUS?
+  status    STATUS?
   name String
   email String
   mobileNumber  String
@@ -38,6 +38,7 @@ model ApplicationForDistributionSystem  {
   firmName    String
   State      String
   District  String
+  extraInfo String?
 }
 
 enum Role {

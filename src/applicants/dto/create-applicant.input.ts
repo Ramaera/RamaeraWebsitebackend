@@ -29,6 +29,9 @@ export class CreateApplicantInput {
 
   @Field(() => String, { nullable:true })
   District : string  
+
+  @Field(() => String, { nullable:true })
+  extraInfo? : string  
 }
 
 

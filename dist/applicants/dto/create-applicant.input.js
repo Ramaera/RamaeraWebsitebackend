@@ -49,6 +49,10 @@ __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true }),
     __metadata("design:type", String)
 ], CreateApplicantInput.prototype, "District", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => String, { nullable: true }),
+    __metadata("design:type", String)
+], CreateApplicantInput.prototype, "extraInfo", void 0);
 CreateApplicantInput = __decorate([
     (0, graphql_1.InputType)()
 ], CreateApplicantInput);
