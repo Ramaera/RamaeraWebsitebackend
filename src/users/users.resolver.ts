@@ -23,19 +23,19 @@ export class UsersResolver {
     private prisma: PrismaService
   ) {}
 
-  @Query(() => User)
-  async me(@UserEntity() user: User): Promise<User> {
-    return user;
-  }
+  // @Query(() => User)
+  // async me(@UserEntity() user: User): Promise<User> {
+  //   return user;
+  // }
 
-  @UseGuards(GqlAuthGuard)
-  @Mutation(() => User)
-  async updateUser(
-    @UserEntity() user: User,
-    @Args('data') newUserData: UpdateUserInput
-  ) {
-    return this.usersService.updateUser(user.id, newUserData);
-  }
+  // @UseGuards(GqlAuthGuard)
+  // @Mutation(() => User)
+  // async updateUser(
+  //   @UserEntity() user: User,
+  //   @Args('data') newUserData: UpdateUserInput
+  // ) {
+  //   return this.usersService.updateUser(user.id, newUserData);
+  // }
 
   @UseGuards(GqlAuthGuard)
   @Mutation(() => User)
@@ -54,4 +54,6 @@ export class UsersResolver {
   // posts(@Parent() author: User) {
   //   return this.prisma.user.findUnique({ where: { id: author.id } }).posts();
   // }
+
+
 }

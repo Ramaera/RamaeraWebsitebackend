@@ -17,15 +17,15 @@ import { User } from 'src/users/models/user.model';
 export class AuthResolver {
   constructor(private readonly auth: AuthService) {}
 
-  // @Mutation(() => Auth)
-  // async signup(@Args('data') data: SignupInput) {
-  //   data.email = data.email.toLowerCase();
-  //   const { accessToken, refreshToken } = await this.auth.createUser(data);
-  //   return {
-  //     accessToken,
-  //     refreshToken,
-  //   };
-  // }
+  @Mutation(() => Auth)
+  async signup(@Args('data') data: SignupInput) {
+    data.email = data.email.toLowerCase();
+    const { accessToken, refreshToken } = await this.auth.createUser(data);
+    return {
+      accessToken,
+      refreshToken,
+    };
+  }
 
   @Mutation(() => Auth)
   async login(@Args('data') { email, password }: LoginInput) {

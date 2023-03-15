@@ -23,33 +23,32 @@ export class AuthService {
     private readonly configService: ConfigService
   ) {}
 
-  // async createUser(payload: SignupInput): Promise<Token> {
-  //   const hashedPassword = await this.passwordService.hashPassword(
-  //     payload.password
-  //   );
+  async createUser(payload: SignupInput): Promise<Token> {
+    const hashedPassword = await this.passwordService.hashPassword(
+      payload.password
+    );
 
-  //   try {
-  //     const user = await this.prisma.user.create({
-  //       data: {
-  //         ...payload,
-  //         password: hashedPassword,
-  //         role: 'USER',
-  //       },
-  //     });
+    try {
+      const user = await this.prisma.user.create({
+        data: {
+          ...payload,
+          password: hashedPassword,
+        },
+      });
 
-  //     return this.generateTokens({
-  //       userId: user.id,
-  //     });
-  //   } catch (e) {
-  //     if (
-  //       e instanceof Prisma.PrismaClientKnownRequestError &&
-  //       e.code === 'P2002'
-  //     ) {
-  //       throw new ConflictException(`Email ${payload.email} already used.`);
-  //     }
-  //     throw new Error(e);
-  //   }
-  // }
+      return this.generateTokens({
+        userId: user.id,
+      });
+    } catch (e) {
+      if (
+        e instanceof Prisma.PrismaClientKnownRequestError &&
+        e.code === 'P2002'
+      ) {
+        throw new ConflictException(`Email ${payload.email} already used.`);
+      }
+      throw new Error(e);
+    }
+  }
 
   async login(email: string, password: string): Promise<Token> {
     const user = await this.prisma.user.findUnique({ where: { email } });

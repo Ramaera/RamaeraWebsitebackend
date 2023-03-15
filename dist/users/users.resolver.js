@@ -21,39 +21,15 @@ const gql_auth_guard_1 = require("../auth/gql-auth.guard");
 const users_service_1 = require("./users.service");
 const user_model_1 = require("./models/user.model");
 const change_password_input_1 = require("./dto/change-password.input");
-const update_user_input_1 = require("./dto/update-user.input");
 let UsersResolver = class UsersResolver {
     constructor(usersService, prisma) {
         this.usersService = usersService;
         this.prisma = prisma;
     }
-    async me(user) {
-        return user;
-    }
-    async updateUser(user, newUserData) {
-        return this.usersService.updateUser(user.id, newUserData);
-    }
     async changePassword(user, changePassword) {
         return this.usersService.changePassword(user.id, user.password, changePassword);
     }
 };
-__decorate([
-    (0, graphql_1.Query)(() => user_model_1.User),
-    __param(0, (0, user_decorator_1.UserEntity)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [user_model_1.User]),
-    __metadata("design:returntype", Promise)
-], UsersResolver.prototype, "me", null);
-__decorate([
-    (0, common_1.UseGuards)(gql_auth_guard_1.GqlAuthGuard),
-    (0, graphql_1.Mutation)(() => user_model_1.User),
-    __param(0, (0, user_decorator_1.UserEntity)()),
-    __param(1, (0, graphql_1.Args)('data')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [user_model_1.User,
-        update_user_input_1.UpdateUserInput]),
-    __metadata("design:returntype", Promise)
-], UsersResolver.prototype, "updateUser", null);
 __decorate([
     (0, common_1.UseGuards)(gql_auth_guard_1.GqlAuthGuard),
     (0, graphql_1.Mutation)(() => user_model_1.User),

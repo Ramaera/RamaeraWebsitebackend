@@ -18,11 +18,20 @@ const auth_service_1 = require("./auth.service");
 const auth_model_1 = require("./models/auth.model");
 const token_model_1 = require("./models/token.model");
 const login_input_1 = require("./dto/login.input");
+const signup_input_1 = require("./dto/signup.input");
 const refresh_token_input_1 = require("./dto/refresh-token.input");
 const user_model_1 = require("../users/models/user.model");
 let AuthResolver = class AuthResolver {
     constructor(auth) {
         this.auth = auth;
+    }
+    async signup(data) {
+        data.email = data.email.toLowerCase();
+        const { accessToken, refreshToken } = await this.auth.createUser(data);
+        return {
+            accessToken,
+            refreshToken,
+        };
     }
     async login({ email, password }) {
         const { accessToken, refreshToken } = await this.auth.login(email.toLowerCase(), password);
@@ -38,6 +47,13 @@ let AuthResolver = class AuthResolver {
         return await this.auth.getUserFromToken(auth.accessToken);
     }
 };
+__decorate([
+    (0, graphql_1.Mutation)(() => auth_model_1.Auth),
+    __param(0, (0, graphql_1.Args)('data')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [signup_input_1.SignupInput]),
+    __metadata("design:returntype", Promise)
+], AuthResolver.prototype, "signup", null);
 __decorate([
     (0, graphql_1.Mutation)(() => auth_model_1.Auth),
     __param(0, (0, graphql_1.Args)('data')),

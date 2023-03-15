@@ -29,13 +29,10 @@ __decorate([
     __metadata("design:type", String)
 ], SignupInput.prototype, "password", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true }),
+    (0, graphql_1.Field)(() => String, {}),
+    (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], SignupInput.prototype, "firstname", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true }),
-    __metadata("design:type", String)
-], SignupInput.prototype, "lastname", void 0);
+], SignupInput.prototype, "name", void 0);
 SignupInput = __decorate([
     (0, graphql_1.InputType)()
 ], SignupInput);

@@ -12,14 +12,17 @@ generator dbml {
   provider = "prisma-dbml-generator"
 }
 
+
+// Tables For Distribution Channel 
+
 model User {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   email     String   @unique
   password  String
-  name        String
-  role      Role
+  name      String
+  role      Role?
 }
 
 model ApplicationForDistributionSystem  {
@@ -52,3 +55,46 @@ enum ApplicantType {
   DISTRIBUTOR
   STOCKIST
 }
+
+// Tables for Project Submission Data 
+
+// model Project {
+//   id        String   @id @default(cuid())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   name      String
+//   email    String?
+//   Country    String?
+//   State      String?
+//   City       String?
+//   mobileNumber  String?
+//   dob           String?
+//   occupation    String ?
+//   director      Director[]
+//   projectDataFields     ProjectDataFields[]
+
+// }
+
+// model ProjectDataFields{
+//   id            String   @id @default(cuid())
+//   projectData   Project?   @relation(fields: [projectId], references: [id])
+//   projectId     String
+//   createdAt     DateTime @default(now())
+//   updatedAt     DateTime @updatedAt
+//   fieldName     String
+//   fieldValue    String 
+// }
+
+
+// model Director{
+//  id            String   @id @default(cuid())  
+//  project       Project?   @relation(fields: [projectId], references: [id])
+//  projectId     String
+//  directorName  String 
+//  basicIntro    String
+// }
+
+
+
+
+

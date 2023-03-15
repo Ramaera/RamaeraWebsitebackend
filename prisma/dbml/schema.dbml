@@ -9,7 +9,7 @@ Table User {
   email String [unique, not null]
   password String [not null]
   name String [not null]
-  role Role [not null]
+  role Role
 }
 
 Table ApplicationForDistributionSystem {

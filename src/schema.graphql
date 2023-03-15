@@ -43,6 +43,19 @@ input CreateApplicantInput {
   name: String
 }
 
+input CreateProjectInput {
+  City: String!
+  Country: String!
+  State: String!
+  dob: String!
+  email: String!
+  fieldName: String!
+  fieldValue: String!
+  mobileNumber: String!
+  name: String!
+  occupation: String!
+}
+
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
@@ -60,27 +73,38 @@ input LoginInput {
 
 type Mutation {
   changePassword(data: ChangePasswordInput!): User!
-  createApplicant(data: CreateApplicantInput!): Applicant!
   createApplication(data: CreateApplicantInput!): Applicant!
+  createProject(createProjectInput: CreateProjectInput!): Project!
   login(data: LoginInput!): Auth!
   refreshToken(token: JWT!): Token!
-  removeApplicant(id: Int!): Applicant!
-  updateApplicant(updateApplicantInput: UpdateApplicantInput!): Applicant!
-  updateUser(data: UpdateUserInput!): User!
+  removeProject(id: Int!): Project!
+  signup(data: SignupInput!): Auth!
+  updateProject(updateProjectInput: UpdateProjectInput!): Project!
+}
+
+type Project {
+  """Example field (placeholder)"""
+  exampleField: Int!
 }
 
 type Query {
-  applicant(id: Int!): Applicant!
   applicants: [Applicant!]!
   hello(name: String!): String!
   helloWorld: String!
-  me: User!
+  project(id: Int!): Project!
+  projects: [Project!]!
 }
 
 """User role"""
 enum Role {
   ADMIN
   USER
+}
+
+input SignupInput {
+  email: String!
+  name: String!
+  password: String!
 }
 
 type Token {
@@ -91,21 +115,18 @@ type Token {
   refreshToken: JWT!
 }
 
-input UpdateApplicantInput {
-  District: String
+input UpdateProjectInput {
+  City: String
+  Country: String
   State: String
-  applicantAddress: String
-  applicantType: ApplicantType
+  dob: String
   email: String
-  firmName: String
+  fieldName: String
+  fieldValue: String
   id: Int!
   mobileNumber: String
   name: String
-}
-
-input UpdateUserInput {
-  firstname: String
-  lastname: String
+  occupation: String
 }
 
 type User {

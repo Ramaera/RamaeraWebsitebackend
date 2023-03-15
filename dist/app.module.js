@@ -21,6 +21,7 @@ const logging_middleware_1 = require("./common/middleware/logging.middleware");
 const apollo_1 = require("@nestjs/apollo");
 const gql_config_service_1 = require("./gql-config.service");
 const applicants_module_1 = require("./applicants/applicants.module");
+const projects_module_1 = require("./projects/projects.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -40,6 +41,7 @@ AppModule = __decorate([
             auth_module_1.AuthModule,
             users_module_1.UsersModule,
             applicants_module_1.ApplicantsModule,
+            projects_module_1.ProjectsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, app_resolver_1.AppResolver],

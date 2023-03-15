@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const nestjs_prisma_1 = require("nestjs-prisma");
+const client_1 = require("@prisma/client");
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const jwt_1 = require("@nestjs/jwt");
@@ -21,6 +22,24 @@ let AuthService = class AuthService {
         this.prisma = prisma;
         this.passwordService = passwordService;
         this.configService = configService;
+    }
+    async createUser(payload) {
+        const hashedPassword = await this.passwordService.hashPassword(payload.password);
+        try {
+            const user = await this.prisma.user.create({
+                data: Object.assign(Object.assign({}, payload), { password: hashedPassword }),
+            });
+            return this.generateTokens({
+                userId: user.id,
+            });
+        }
+        catch (e) {
+            if (e instanceof client_1.Prisma.PrismaClientKnownRequestError &&
+                e.code === 'P2002') {
+                throw new common_1.ConflictException(`Email ${payload.email} already used.`);
+            }
+            throw new Error(e);
+        }
     }
     async login(email, password) {
         const user = await this.prisma.user.findUnique({ where: { email } });

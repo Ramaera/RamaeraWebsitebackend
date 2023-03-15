@@ -17,7 +17,6 @@ const graphql_1 = require("@nestjs/graphql");
 const applicants_service_1 = require("./applicants.service");
 const applicant_entity_1 = require("./entities/applicant.entity");
 const create_applicant_input_1 = require("./dto/create-applicant.input");
-const update_applicant_input_1 = require("./dto/update-applicant.input");
 const nestjs_prisma_1 = require("nestjs-prisma");
 let ApplicantsResolver = class ApplicantsResolver {
     constructor(applicantsService, prisma) {
@@ -27,27 +26,14 @@ let ApplicantsResolver = class ApplicantsResolver {
     async createApplication(payload) {
         try {
             const newApplication = this.prisma.applicationForDistributionSystem.create({
-                data: Object.assign({}, payload)
+                data: Object.assign({}, payload),
             });
             return newApplication;
         }
-        catch (err) {
-        }
+        catch (err) { }
     }
-    createApplicant(createApplicantInput) {
-        return this.applicantsService.create(createApplicantInput);
-    }
-    findAll() {
+    async findAll() {
         return this.applicantsService.findAll();
-    }
-    findOne(id) {
-        return this.applicantsService.findOne(id);
-    }
-    updateApplicant(updateApplicantInput) {
-        return this.applicantsService.update(updateApplicantInput.id, updateApplicantInput);
-    }
-    removeApplicant(id) {
-        return this.applicantsService.remove(id);
     }
 };
 __decorate([
@@ -58,39 +44,11 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ApplicantsResolver.prototype, "createApplication", null);
 __decorate([
-    (0, graphql_1.Mutation)(() => applicant_entity_1.Applicant),
-    __param(0, (0, graphql_1.Args)('data')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_applicant_input_1.CreateApplicantInput]),
-    __metadata("design:returntype", void 0)
-], ApplicantsResolver.prototype, "createApplicant", null);
-__decorate([
     (0, graphql_1.Query)(() => [applicant_entity_1.Applicant], { name: 'applicants' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], ApplicantsResolver.prototype, "findAll", null);
-__decorate([
-    (0, graphql_1.Query)(() => applicant_entity_1.Applicant, { name: 'applicant' }),
-    __param(0, (0, graphql_1.Args)('id', { type: () => graphql_1.Int })),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", void 0)
-], ApplicantsResolver.prototype, "findOne", null);
-__decorate([
-    (0, graphql_1.Mutation)(() => applicant_entity_1.Applicant),
-    __param(0, (0, graphql_1.Args)('updateApplicantInput')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [update_applicant_input_1.UpdateApplicantInput]),
-    __metadata("design:returntype", void 0)
-], ApplicantsResolver.prototype, "updateApplicant", null);
-__decorate([
-    (0, graphql_1.Mutation)(() => applicant_entity_1.Applicant),
-    __param(0, (0, graphql_1.Args)('id', { type: () => graphql_1.Int })),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", void 0)
-], ApplicantsResolver.prototype, "removeApplicant", null);
 ApplicantsResolver = __decorate([
     (0, graphql_1.Resolver)(() => applicant_entity_1.Applicant),
     __metadata("design:paramtypes", [applicants_service_1.ApplicantsService,
