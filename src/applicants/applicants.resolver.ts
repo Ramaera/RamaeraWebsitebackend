@@ -4,6 +4,8 @@ import { Applicant } from './entities/applicant.entity';
 import { CreateApplicantInput } from './dto/create-applicant.input';
 import { UpdateApplicantInput } from './dto/update-applicant.input';
 import { PrismaService } from 'nestjs-prisma';
+import { UseGuards } from '@nestjs/common';
+import { GqlAuthGuard } from 'src/auth/gql-auth.guard';
 
 @Resolver(() => Applicant)
 export class ApplicantsResolver {
@@ -12,6 +14,7 @@ export class ApplicantsResolver {
     private readonly prisma: PrismaService
   ) {}
 
+  @UseGuards(GqlAuthGuard)
   @Mutation(() => Applicant)
   async createApplication(
     @Args('data')

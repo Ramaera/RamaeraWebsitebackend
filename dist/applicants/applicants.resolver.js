@@ -18,6 +18,8 @@ const applicants_service_1 = require("./applicants.service");
 const applicant_entity_1 = require("./entities/applicant.entity");
 const create_applicant_input_1 = require("./dto/create-applicant.input");
 const nestjs_prisma_1 = require("nestjs-prisma");
+const common_1 = require("@nestjs/common");
+const gql_auth_guard_1 = require("../auth/gql-auth.guard");
 let ApplicantsResolver = class ApplicantsResolver {
     constructor(applicantsService, prisma) {
         this.applicantsService = applicantsService;
@@ -37,6 +39,7 @@ let ApplicantsResolver = class ApplicantsResolver {
     }
 };
 __decorate([
+    (0, common_1.UseGuards)(gql_auth_guard_1.GqlAuthGuard),
     (0, graphql_1.Mutation)(() => applicant_entity_1.Applicant),
     __param(0, (0, graphql_1.Args)('data')),
     __metadata("design:type", Function),

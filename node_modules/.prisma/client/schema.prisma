@@ -59,19 +59,19 @@ enum ApplicantType {
 // Tables for Project Submission Data 
 
 model Project {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String
-  email    String?
-  Country    String?
-  State      String?
-  City       String?
-  mobileNumber  String?
-  dob           String?
-  occupation    String ?
-  director      Director[]
-  projectDataFields     ProjectDataFields[]
+  id                 String   @id @default(cuid())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  name               String
+  email              String?
+  Country            String?
+  State              String?
+  City               String?
+  mobileNumber       String?
+  dob                String?
+  occupation         String ?
+  director           Director[]
+  projectDataFields  ProjectDataFields[]
 
 }
 
@@ -93,8 +93,5 @@ model Director{
  directorName  String 
  basicIntro    String
 }
-
-
-
 
 
