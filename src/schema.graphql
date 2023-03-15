@@ -43,19 +43,6 @@ input CreateApplicantInput {
   name: String
 }
 
-input CreateProjectInput {
-  City: String!
-  Country: String!
-  State: String!
-  dob: String!
-  email: String!
-  fieldName: String!
-  fieldValue: String!
-  mobileNumber: String!
-  name: String!
-  occupation: String!
-}
-
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
@@ -74,25 +61,13 @@ input LoginInput {
 type Mutation {
   changePassword(data: ChangePasswordInput!): User!
   createApplication(data: CreateApplicantInput!): Applicant!
-  createProject(createProjectInput: CreateProjectInput!): Project!
   login(data: LoginInput!): Auth!
   refreshToken(token: JWT!): Token!
-  removeProject(id: Int!): Project!
   signup(data: SignupInput!): Auth!
-  updateProject(updateProjectInput: UpdateProjectInput!): Project!
-}
-
-type Project {
-  """Example field (placeholder)"""
-  exampleField: Int!
 }
 
 type Query {
   applicants: [Applicant!]!
-  hello(name: String!): String!
-  helloWorld: String!
-  project(id: Int!): Project!
-  projects: [Project!]!
 }
 
 """User role"""
@@ -113,20 +88,6 @@ type Token {
 
   """JWT refresh token"""
   refreshToken: JWT!
-}
-
-input UpdateProjectInput {
-  City: String
-  Country: String
-  State: String
-  dob: String
-  email: String
-  fieldName: String
-  fieldValue: String
-  id: Int!
-  mobileNumber: String
-  name: String
-  occupation: String
 }
 
 type User {

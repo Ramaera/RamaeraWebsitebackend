@@ -33,7 +33,7 @@ let ApplicantsResolver = class ApplicantsResolver {
         catch (err) { }
     }
     async findAll() {
-        return this.applicantsService.findAll();
+        return this.prisma.applicationForDistributionSystem.findMany({});
     }
 };
 __decorate([

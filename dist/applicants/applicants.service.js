@@ -16,23 +16,8 @@ let ApplicantsService = class ApplicantsService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    create(createApplicantInput) {
-        return 'This action adds a new applicant';
-    }
     async getAllUser() {
         return this.prisma.user.findMany({});
-    }
-    findAll() {
-        return `This action returns all applicants`;
-    }
-    findOne(id) {
-        return `This action returns a #${id} applicant`;
-    }
-    update(id, updateApplicantInput) {
-        return `This action updates a #${id} applicant`;
-    }
-    remove(id) {
-        return `This action removes a #${id} applicant`;
     }
 };
 ApplicantsService = __decorate([

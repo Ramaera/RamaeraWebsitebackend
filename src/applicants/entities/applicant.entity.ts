@@ -4,29 +4,29 @@ import { ApplicantType, STATUS } from '@prisma/client';
 @ObjectType()
 export class Applicant {
 
-  @Field(() => String,{nullable:true} )
+  @Field(() => String, {nullable:true} )
   name: string
 
-  @Field(() => String  )
+  @Field(() => String)
   email: string
 
-  @Field(() => String,  )
+  @Field(() => String)
   mobileNumber : string
 
-  @Field(() => String,  )
+  @Field(() => String)
   applicantAddress:string
 
 
-  @Field(() => ApplicantType  )
+  @Field(() => ApplicantType)
   applicantType : ApplicantType
 
-  @Field(() => String,  )
+  @Field(() => String)
   firmName: String
 
-  @Field(() => String,  )
+  @Field(() => String)
   State:String
 
-  @Field(() => String,  )
+  @Field(() => String)
   District : string  
 }
 

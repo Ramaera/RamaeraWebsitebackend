@@ -29,34 +29,14 @@ export class ApplicantsResolver {
     } catch (err) {}
   }
 
-  // @Query(() => [Applicant])
-  // async getAllUser() {
-  //   const _user = await this.applicantsService.getAllApplicant();
-  //   return _user
-  // }
 
-  // @Mutation(() => Applicant)
-  // createApplicant(@Args('data') createApplicantInput: CreateApplicantInput) {
-  //   return this.applicantsService.create(createApplicantInput);
-  // }
+
 
   @Query(() => [Applicant], { name: 'applicants' })
- async  findAll() {
-    return this.applicantsService.findAll();
+  async findAll() {
+    return this.prisma.applicationForDistributionSystem.findMany({})
+    // return this.applicantsService.getAllUser();
   }
 
-  // @Query(() => Applicant, { name: 'applicant' })
-  // findOne(@Args('id', { type: () => Int }) id: number) {
-  //   return this.applicantsService.findOne(id);
-  // }
 
-  // @Mutation(() => Applicant)
-  // updateApplicant(@Args('updateApplicantInput') updateApplicantInput: UpdateApplicantInput) {
-  //   return this.applicantsService.update(updateApplicantInput.id, updateApplicantInput);
-  // }
-
-  // @Mutation(() => Applicant)
-  // removeApplicant(@Args('id', { type: () => Int }) id: number) {
-  //   return this.applicantsService.remove(id);
-  // }
 }

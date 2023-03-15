@@ -16,4 +16,5 @@ export class SignupInput {
   @IsNotEmpty()
   name:string;
 
+  
 }
