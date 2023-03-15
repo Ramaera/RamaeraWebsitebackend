@@ -14,7 +14,7 @@ export class ApplicantsResolver {
     private readonly prisma: PrismaService
   ) {}
 
-  @UseGuards(GqlAuthGuard)
+
   @Mutation(() => Applicant)
   async createApplication(
     @Args('data')
@@ -34,7 +34,7 @@ export class ApplicantsResolver {
 
 
 
-
+  @UseGuards(GqlAuthGuard)
   @Query(() => [Applicant], { name: 'applicants' })
   async findAll() {
     return this.prisma.applicationForDistributionSystem.findMany({})
