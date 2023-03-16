@@ -1,7 +1,15 @@
 import { InputType, Int, Field } from '@nestjs/graphql';
 
+
+export class Director {
+   directorName: string;
+   directorBasicInfo: string;
+}
+
 @InputType()
 export class CreateProjectInput {
+
+
   @Field()
    name:string
    @Field()
@@ -18,8 +26,21 @@ export class CreateProjectInput {
    City:string
    @Field()
    occupation:string
+   @Field()
+   projectId:string
+
+   @Field(()=>[String])
+   director?:string
+
+  //  @Field()
+  //  directorName:string
+
+  //  @Field()
+  //  basicInfo:string
 
 }
+
+ 
 
 @InputType()
 export class CreateDirectorInput {
@@ -31,7 +52,9 @@ export class CreateDirectorInput {
 }
 @InputType()
 export class CreateProjectDataFieldInput {
- 
+
+  @Field()
+  projectId:string
    @Field()
    fieldName:string
    @Field()

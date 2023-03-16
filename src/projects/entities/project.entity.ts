@@ -8,4 +8,7 @@ export class Project {
 
   @Field(() => String, { nullable:true })
   id: string;
+
+  // @Field(() => String, { nullable:true })
+  // id: string;
 }

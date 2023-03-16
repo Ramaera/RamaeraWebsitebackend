@@ -5,12 +5,15 @@ import { CreateDirectorInput, CreateProjectDataFieldInput, CreateProjectInput } 
 import { UpdateProjectInput } from './dto/update-project.input';
 import { PrismaService } from 'nestjs-prisma';
 import { ProjectEntity } from 'src/common/decorators/project.decorator';
+import { Prisma } from '@prisma/client';
 
 @Resolver(() => Project)
 export class ProjectsResolver {
   constructor(private readonly projectsService: ProjectsService,
     private readonly prisma: PrismaService
     ) {}
+
+
 
   @Mutation(() => Project)
   async CreateProject(
@@ -20,8 +23,10 @@ export class ProjectsResolver {
     payload: CreateProjectInput
   ) {
     try {
+
       const projectData =this.prisma.project.create({
           data:{
+            
             name:payload.name,
             email:payload.email,
             Country:payload.Country,
@@ -30,36 +35,33 @@ export class ProjectsResolver {
             mobileNumber:payload.mobileNumber,
             dob:payload.dob,
             occupation:payload.occupation,
-
-
-
+            director:payload.director
           }
         });
-
       return projectData;
     } catch (err) {
       console.log(err.message)
     }
   }
 
-  @Mutation(() => Project)
-  async CreateDirector(
-  @ProjectEntity ()
-  project:Project,
-    @Args('data')
-    payload: CreateDirectorInput
-  ) {
-    try {
-      const directorData =this.prisma.director.create({
-          data:{
-              id:project.id,
-              directorName:payload.directorName,
-              basicIntro:payload.basicIntro,
-          }
-        });
-      return directorData;
-    } catch (err) { console.log(err.message)}
-  }
+  // @Mutation(() => Project)
+  // async CreateDirector(
+  // @ProjectEntity ()
+  // project:Project,
+  //   @Args('data')
+  //   payload: CreateDirectorInput
+  // ) {
+  //   try {
+  //     const directorData =this.prisma.director.create({
+  //         data:{
+  //             id:project.id,
+  //             directorName:payload.directorName,
+  //             basicIntro:payload.basicIntro,
+  //         }
+  //       });
+  //     return directorData;
+  //   } catch (err) { console.log(err.message)}
+  // }
   
   @Mutation(() => Project)
   async CreateProjectDataField(
@@ -71,13 +73,11 @@ export class ProjectsResolver {
     try {
       const projectFieldData =this.prisma.projectDataFields.create({
           data:{
-                id:project.id,
+                projectId:payload.projectId,
                 fieldName:payload.fieldName,
                 fieldValue:payload.fieldValue,
-            
           }
         });
-    
 
       return projectFieldData;
     } catch (err) {

@@ -63,19 +63,23 @@ input CreateContactUsRepsonseInput {
   name: String!
 }
 
+input CreateProjectDataFieldInput {
+  fieldName: String!
+  fieldValue: String!
+  projectId: String!
+}
+
 input CreateProjectInput {
   City: String!
   Country: String!
   State: String!
-  basicIntro: String!
-  directorName: String!
+  director: [String!]
   dob: String!
   email: String!
-  fieldName: String!
-  fieldValue: String!
   mobileNumber: String!
   name: String!
   occupation: String!
+  projectId: String!
 }
 
 """
@@ -95,6 +99,7 @@ input LoginInput {
 
 type Mutation {
   CreateProject(data: CreateProjectInput!): Project!
+  CreateProjectDataField(data: CreateProjectDataFieldInput!): Project!
   changePassword(data: ChangePasswordInput!): User!
   createApplication(data: CreateApplicantInput!): Applicant!
   createContactUsResponse(data: CreateContactUsRepsonseInput!): ContactUsRepsonse!
