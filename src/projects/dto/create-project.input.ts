@@ -26,9 +26,6 @@ export class CreateProjectInput {
    City:string
    @Field()
    occupation:string
-   @Field()
-   projectId:string
-
    @Field(()=>[String])
    director?:string
 

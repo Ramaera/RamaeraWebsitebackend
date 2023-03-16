@@ -79,7 +79,6 @@ input CreateProjectInput {
   mobileNumber: String!
   name: String!
   occupation: String!
-  projectId: String!
 }
 
 """
