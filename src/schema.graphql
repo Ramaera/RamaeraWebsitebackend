@@ -67,6 +67,8 @@ input CreateProjectInput {
   City: String!
   Country: String!
   State: String!
+  basicIntro: String!
+  directorName: String!
   dob: String!
   email: String!
   fieldName: String!

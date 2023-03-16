@@ -4,33 +4,37 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 export class CreateProjectInput {
   @Field()
    name:string
-@Field()
+   @Field()
    email:string
-@Field()
+   @Field()
    mobileNumber:string
-@Field()
+   @Field()
    dob:string
-@Field()
+   @Field()
    Country:string
-@Field()
+   @Field()
    State:string
     @Field()
    City:string
    @Field()
    occupation:string
 
+}
+
+@InputType()
+export class CreateDirectorInput {
+ 
+   @Field()
+   directorName:string
+   @Field()
+   basicIntro:string
+}
+@InputType()
+export class CreateProjectDataFieldInput {
+ 
    @Field()
    fieldName:string
    @Field()
    fieldValue:string
 
-
 }
-
-
-
-  
-  
-
-// director      Director[]
-// projectDataFields     ProjectDataFields[]

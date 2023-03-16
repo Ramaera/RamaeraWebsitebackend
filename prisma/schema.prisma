@@ -78,10 +78,11 @@ model Project {
 
 model ProjectDataFields{
   id            String   @id @default(cuid())
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
   projectData   Project?   @relation(fields: [projectId], references: [id])
   projectId     String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+
   fieldName     String
   fieldValue    String 
 }
@@ -89,6 +90,8 @@ model ProjectDataFields{
 
 model Director{
  id            String   @id @default(cuid())  
+createdAt     DateTime @default(now())
+updatedAt     DateTime @updatedAt
  project       Project?   @relation(fields: [projectId], references: [id])
  projectId     String
  directorName  String 
@@ -101,6 +104,8 @@ model Director{
 
 
 model ContactusResponse{
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
   id        String  @id  @default(cuid())
   name      String   
   email     String
