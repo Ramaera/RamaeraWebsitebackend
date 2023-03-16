@@ -101,12 +101,12 @@ model Director{
 
 
 model ContactusResponse{
-  id      String  @id  @default(cuid())
-  name    String   
-  email  String
-  company String?
-  Subject  String?
-  message  String?
+  id        String  @id  @default(cuid())
+  name      String   
+  email     String
+  company   String?
+  Subject   String?
+  message   String?
 
 }
 
