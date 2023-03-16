@@ -108,13 +108,21 @@ type Mutation {
 }
 
 type Project {
-  id: String
-
-  """Example field (placeholder)"""
+  City: String!
+  Country: String!
+  State: String!
+  director: String
+  dob: String!
+  email: String!
+  fieldValue: String
+  fieldname: String
+  mobileNumber: String!
   name: String!
+  occupation: String!
 }
 
 type Query {
+  AllProjectDetails: [Project!]!
   applicants: [Applicant!]!
   contactUsRepsonses: [ContactUsRepsonse!]!
 }

@@ -62,6 +62,17 @@ export class ProjectsResolver {
   //     return directorData;
   //   } catch (err) { console.log(err.message)}
   // }
+
+
+  @Query(() => [Project], { name: 'AllProjectDetails' })
+  findAll() {
+    return this.prisma.project.findMany({});
+  }
+
+
+
+
+
   
   @Mutation(() => Project)
   async CreateProjectDataField(
