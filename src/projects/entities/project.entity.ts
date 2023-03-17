@@ -23,39 +23,39 @@ export class Project {
   @Field()
   occupation: string;
 
-  @Field(() => [String])
+  @Field( ()=> [String])
   director?: string;
 
-  @Field(() => [String]) yourProjectType: string;
-  @Field(() => [String]) youAre: string;
-  @Field(() => [String]) typeOfPartnership: string;
-  @Field(() => [String]) fundingType: string;
-  @Field(() => [String]) receivingMode: string;
-  @Field(() => [String]) goal: string;
-  @Field(() => [String]) targetFor: string;
-  @Field(() => [String]) perPersonAmount: string;
-  @Field(() => [String]) yourProjectTitle: string;
-  @Field(() => [String]) brief: string;
-  @Field(() => [String]) marketProblem: string;
-  @Field(() => [String]) solution: string;
-  @Field(() => [String]) yourProduct: string;
-  @Field(() => [String]) businessModel: string;
-  @Field(() => [String]) sizeOfMarket: string;
-  @Field(() => [String]) currentTransaction: string;
-  @Field(() => [String]) competitiveLandscape: string;
-  @Field(() => [String]) financialProjection: string;
-  @Field(() => [String]) fundNeed: string;
-  @Field(() => [String]) equityStructure: string;
-  @Field(() => [String]) exitOption: string;
-  @Field(() => [String]) selectFundingType: string;
-  @Field(() => [String]) fundingStage: string;
-  @Field(() => [String]) selectFundingTypeAgain: string;
-  @Field(() => [String]) fundingAmount: string;
-  @Field(() => [String]) fundingDate: string;
-  @Field(() => [String]) linkedinProfile: string;
-  @Field(() => [String]) twitterProfile: string;
-  @Field(() => [String]) facebookProfile: string;
-  @Field(() => [String]) instagramProfile: string;
-  @Field(() => [String]) websiteURL: string;
-  @Field(() => [String]) thanksNote: string;
+  @Field(  ) yourProjectType: string;
+  @Field(  ) youAre: string;
+  @Field(  ) typeOfPartnership: string;
+  @Field(  ) fundingType: string;
+  @Field(  ) receivingMode: string;
+  @Field(  ) goal: string;
+  @Field(  ) targetFor: string;
+  @Field(  ) perPersonAmount: string;
+  @Field(  ) yourProjectTitle: string;
+  @Field(  ) brief: string;
+  @Field(  ) marketProblem: string;
+  @Field(  ) solution: string;
+  @Field(  ) yourProduct: string;
+  @Field(  ) businessModel: string;
+  @Field(  ) sizeOfMarket: string;
+  @Field(  ) currentTransaction: string;
+  @Field(  ) competitiveLandscape: string;
+  @Field(  ) financialProjection: string;
+  @Field(  ) fundNeed: string;
+  @Field(  ) equityStructure: string;
+  @Field(  ) exitOption: string;
+  @Field(  ) selectFundingType: string;
+  @Field(  ) fundingStage: string;
+  @Field(  ) selectFundingTypeAgain: string;
+  @Field(  ) fundingAmount: string;
+  @Field(  ) fundingDate: string;
+  @Field(  ) linkedinProfile: string;
+  @Field(  ) twitterProfile: string;
+  @Field(  ) facebookProfile: string;
+  @Field(  ) instagramProfile: string;
+  @Field(  ) websiteURL: string;
+  @Field(  ) thanksNote: string;
 }
