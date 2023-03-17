@@ -12,7 +12,6 @@ generator dbml {
   provider = "prisma-dbml-generator"
 }
 
-
 // Tables For Distribution Channel 
 
 model User {
@@ -25,20 +24,20 @@ model User {
   role      Role?
 }
 
-model ApplicationForDistributionSystem  {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  status    STATUS?
-  name String
-  email String
-  mobileNumber  String
+model ApplicationForDistributionSystem {
+  id               String        @id @default(cuid())
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  status           STATUS?
+  name             String
+  email            String
+  mobileNumber     String
   applicantAddress String
-  applicantType  ApplicantType
-  firmName    String
-  State      String
-  District  String
-  extraInfo String?
+  applicantType    ApplicantType
+  firmName         String
+  State            String
+  District         String
+  extraInfo        String?
 }
 
 enum Role {
@@ -60,59 +59,72 @@ enum ApplicantType {
 // Tables for Project Submission Data 
 
 model Project {
-  id                 String   @id @default(cuid())
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
-  name               String
-  email              String?
-  Country            String?
-  State              String?
-  City               String?
-  mobileNumber       String?
-  dob                String?
-  occupation         String ?
-  director           String[]
-  projectDataFields  ProjectDataFields[]
-
+  id                     String   @id @default(cuid())
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+  name                   String
+  email                  String?
+  Country                String?
+  State                  String?
+  City                   String?
+  mobileNumber           String?
+  dob                    String?
+  occupation             String?
+  director               String[]
+  yourProjectType        String?
+  youAre                 String?
+  typeOfPartnership      String?
+  fundingType            String?
+  receivingMode          String?
+  goal                   String?
+  targetFor              String?
+  perPersonAmount        String?
+  yourProjectTitle       String?
+  brief                  String?
+  marketProblem          String?
+  solution               String?
+  yourProduct            String?
+  businessModel          String?
+  sizeOfMarket           String?
+  currentTransaction     String?
+  competitiveLandscape   String?
+  financialProjection    String?
+  fundNeed               String?
+  equityStructure        String?
+  exitOption             String?
+  selectFundingType      String?
+  fundingStage           String?
+  selectFundingTypeAgain String?
+  fundingAmount          String?
+  fundingDate            String?
+  linkedinProfile        String?
+  twitterProfile         String?
+  facebookProfile        String?
+  instagramProfile       String?
+  websiteURL             String?
+  thanksNote             String?
 }
 
-model ProjectDataFields{
-  id            String   @id @default(cuid())
-  createdAt          DateTime @default(now())
-  updatedAt          DateTime @updatedAt
-  projectData   Project?   @relation(fields: [projectId], references: [id])
-  projectId     String
+// model ProjectDataFields{
+//   id            String   @id @default(cuid())
+//   createdAt          DateTime @default(now())
+//   updatedAt          DateTime @updatedAt
+//   projectData   Project?   @relation(fields: [projectId], references: [id])
+//   projectId     String
 
-  fieldName     String
-  fieldValue    String 
-}
-
-
-// model Director{
-//  id            String   @id @default(cuid())  
-// createdAt     DateTime @default(now())
-// updatedAt     DateTime @updatedAt
-//  project       Project?   @relation(fields: [projectId], references: [id])
-//  projectId     String
-//  directorName  String 
-//  basicIntro    String
+//   fieldName     String
+//   fieldValue    String 
 // }
-
-
 
 //  Contact us Details
 
-
-model ContactusResponse{
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-  id        String  @id  @default(cuid())
-  name      String   
+model ContactusResponse {
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  id        String   @id @default(cuid())
+  name      String
   email     String
   company   String?
   Subject   String?
   message   String?
-
 }
-
-

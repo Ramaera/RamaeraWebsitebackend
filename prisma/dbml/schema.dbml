@@ -41,17 +41,38 @@ Table Project {
   dob String
   occupation String
   director String[] [not null]
-  projectDataFields ProjectDataFields [not null]
-}
-
-Table ProjectDataFields {
-  id String [pk]
-  createdAt DateTime [default: `now()`, not null]
-  updatedAt DateTime [not null]
-  projectData Project
-  projectId String [not null]
-  fieldName String [not null]
-  fieldValue String [not null]
+  yourProjectType String
+  youAre String
+  typeOfPartnership String
+  fundingType String
+  receivingMode String
+  goal String
+  targetFor String
+  perPersonAmount String
+  yourProjectTitle String
+  brief String
+  marketProblem String
+  solution String
+  yourProduct String
+  businessModel String
+  sizeOfMarket String
+  currentTransaction String
+  competitiveLandscape String
+  financialProjection String
+  fundNeed String
+  equityStructure String
+  exitOption String
+  selectFundingType String
+  fundingStage String
+  selectFundingTypeAgain String
+  fundingAmount String
+  fundingDate String
+  linkedinProfile String
+  twitterProfile String
+  facebookProfile String
+  instagramProfile String
+  websiteURL String
+  thanksNote String
 }
 
 Table ContactusResponse {
@@ -80,5 +101,3 @@ Enum ApplicantType {
   DISTRIBUTOR
   STOCKIST
 }
-
-Ref: ProjectDataFields.projectId > Project.id

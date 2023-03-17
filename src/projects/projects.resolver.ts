@@ -1,7 +1,7 @@
 import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { ProjectsService } from './projects.service';
 import { Project } from './entities/project.entity';
-import { CreateDirectorInput, CreateProjectDataFieldInput, CreateProjectInput } from './dto/create-project.input';
+import {  CreateProjectInput } from './dto/create-project.input';
 import { UpdateProjectInput } from './dto/update-project.input';
 import { PrismaService } from 'nestjs-prisma';
 import { ProjectEntity } from 'src/common/decorators/project.decorator';
@@ -25,18 +25,7 @@ export class ProjectsResolver {
     try {
 
       const projectData =this.prisma.project.create({
-          data:{
-            
-            name:payload.name,
-            email:payload.email,
-            Country:payload.Country,
-            State:payload.State,
-            City:payload.City,
-            mobileNumber:payload.mobileNumber,
-            dob:payload.dob,
-            occupation:payload.occupation,
-            director:payload.director
-          }
+          data:{...payload}
         });
       return projectData;
     } catch (err) {
@@ -74,25 +63,25 @@ export class ProjectsResolver {
 
 
   
-  @Mutation(() => Project)
-  async CreateProjectDataField(
-  @ProjectEntity ()
-  project:Project,
-    @Args('data')
-    payload: CreateProjectDataFieldInput
-  ) {
-    try {
-      const projectFieldData =this.prisma.projectDataFields.create({
-          data:{
-                projectId:payload.projectId,
-                fieldName:payload.fieldName,
-                fieldValue:payload.fieldValue,
-          }
-        });
+//   @Mutation(() => Project)
+//   async CreateProjectDataField(
+//   @ProjectEntity ()
+//   project:Project,
+//     @Args('data')
+//     payload: CreateProjectDataFieldInput
+//   ) {
+//     try {
+//       const projectFieldData =this.prisma.projectDataFields.create({
+//           data:{
+//                 projectId:payload.projectId,
+//                 fieldName:payload.fieldName,
+//                 fieldValue:payload.fieldValue,
+//           }
+//         });
 
-      return projectFieldData;
-    } catch (err) {
-      console.log(err.message)
-    }
-  }
+//       return projectFieldData;
+//     } catch (err) {
+//       console.log(err.message)
+//     }
+//   }
 }
