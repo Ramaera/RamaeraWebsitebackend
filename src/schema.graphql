@@ -130,6 +130,7 @@ type Mutation {
   login(data: LoginInput!): Auth!
   refreshToken(token: JWT!): Token!
   signup(data: SignupInput!): Auth!
+  updateUser(data: UpdateUserInput!): User!
 }
 
 type Project {
@@ -185,13 +186,16 @@ type Query {
 """User role"""
 enum Role {
   ADMIN
-  USER
+  EXECUTIVE
+  HR
+  SALES
 }
 
 input SignupInput {
   email: String!
   name: String!
   password: String!
+  role: Role!
 }
 
 type Token {
@@ -202,13 +206,17 @@ type Token {
   refreshToken: JWT!
 }
 
+input UpdateUserInput {
+  name: String
+  role: Role
+}
+
 type User {
   """Identifies the date and time when the object was created."""
   createdAt: DateTime!
   email: String!
-  firstname: String
   id: ID!
-  lastname: String
+  name: String
   role: Role!
 
   """Identifies the date and time when the object was last updated."""

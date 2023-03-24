@@ -42,7 +42,10 @@ model ApplicationForDistributionSystem {
 
 enum Role {
   ADMIN
-  USER
+  HR
+  SALES
+  EXECUTIVE
+  
 }
 
 enum STATUS {

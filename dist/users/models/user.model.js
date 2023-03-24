@@ -32,11 +32,7 @@ __decorate([
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true }),
     __metadata("design:type", String)
-], User.prototype, "firstname", void 0);
-__decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true }),
-    __metadata("design:type", String)
-], User.prototype, "lastname", void 0);
+], User.prototype, "name", void 0);
 __decorate([
     (0, graphql_1.Field)(() => client_1.Role, {}),
     __metadata("design:type", String)

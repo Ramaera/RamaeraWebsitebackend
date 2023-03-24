@@ -28,14 +28,14 @@ export class UsersResolver {
   //   return user;
   // }
 
-  // @UseGuards(GqlAuthGuard)
-  // @Mutation(() => User)
-  // async updateUser(
-  //   @UserEntity() user: User,
-  //   @Args('data') newUserData: UpdateUserInput
-  // ) {
-  //   return this.usersService.updateUser(user.id, newUserData);
-  // }
+  @UseGuards(GqlAuthGuard)
+  @Mutation(() => User)
+  async updateUser(
+    @UserEntity() user: User,
+    @Args('data') newUserData: UpdateUserInput
+  ) {
+    return this.usersService.updateUser(user.id, newUserData);
+  }
 
   @UseGuards(GqlAuthGuard)
   @Mutation(() => User)

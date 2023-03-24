@@ -26,7 +26,7 @@ export class Project {
   @Field( ()=> [String])
   director?: string;
 
-  @Field(  ) yourProjectType: string;
+  @Field(  ) yourProjectType : string;
   @Field(  ) youAre: string;
   @Field(  ) typeOfPartnership: string;
   @Field(  ) fundingType: string;

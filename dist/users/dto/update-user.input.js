@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateUserInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
+const client_1 = require("@prisma/client");
 let UpdateUserInput = class UpdateUserInput {
     static _GRAPHQL_METADATA_FACTORY() {
         return {};
@@ -19,11 +20,11 @@ let UpdateUserInput = class UpdateUserInput {
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true }),
     __metadata("design:type", String)
-], UpdateUserInput.prototype, "firstname", void 0);
+], UpdateUserInput.prototype, "name", void 0);
 __decorate([
-    (0, graphql_1.Field)(() => String, { nullable: true }),
+    (0, graphql_1.Field)(() => client_1.Role, { nullable: true }),
     __metadata("design:type", String)
-], UpdateUserInput.prototype, "lastname", void 0);
+], UpdateUserInput.prototype, "role", void 0);
 UpdateUserInput = __decorate([
     (0, graphql_1.InputType)()
 ], UpdateUserInput);
