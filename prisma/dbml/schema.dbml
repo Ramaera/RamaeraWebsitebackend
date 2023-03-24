@@ -86,6 +86,18 @@ Table ContactusResponse {
   message String
 }
 
+Table Career {
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  id String [pk]
+  jobTitle String [not null]
+  jobLocation String [not null]
+  jobType String [not null]
+  jobDescription String [not null]
+  department String
+  jobStatus JOBSTATUS
+}
+
 Enum Role {
   ADMIN
   HR
@@ -102,4 +114,10 @@ Enum STATUS {
 Enum ApplicantType {
   DISTRIBUTOR
   STOCKIST
+}
+
+Enum JOBSTATUS {
+  ACTIVE
+  COMPLETED
+  PENDING
 }

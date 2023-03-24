@@ -59,6 +59,7 @@ enum ApplicantType {
   STOCKIST
 }
 
+
 // Tables for Project Submission Data 
 
 model Project {
@@ -107,18 +108,6 @@ model Project {
   websiteURL             String?
   thanksNote             String?
 }
-
-// model ProjectDataFields{
-//   id            String   @id @default(cuid())
-//   createdAt          DateTime @default(now())
-//   updatedAt          DateTime @updatedAt
-//   projectData   Project?   @relation(fields: [projectId], references: [id])
-//   projectId     String
-
-//   fieldName     String
-//   fieldValue    String 
-// }
-
 //  Contact us Details
 
 model ContactusResponse {
@@ -130,4 +119,25 @@ model ContactusResponse {
   company   String?
   Subject   String?
   message   String?
+}
+
+
+// Career Table
+
+model Career{
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  id              String   @id @default(cuid())
+  jobTitle        String
+  jobLocation     String
+  jobType         String
+  jobDescription  String
+  department      String?
+  jobStatus       JOBSTATUS?
+}
+
+enum JOBSTATUS {
+  ACTIVE
+  COMPLETED
+  PENDING
 }

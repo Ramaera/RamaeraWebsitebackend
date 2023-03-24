@@ -14,6 +14,7 @@ import { GqlConfigService } from './gql-config.service';
 import { ApplicantsModule } from './applicants/applicants.module';
 import { ProjectsModule } from './projects/projects.module';
 import { ContactUsRepsonsesModule } from './contact-us-repsonses/contact-us-repsonses.module';
+import { CareerModule } from './career/career.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { ContactUsRepsonsesModule } from './contact-us-repsonses/contact-us-reps
     ApplicantsModule,
     ProjectsModule,
     ContactUsRepsonsesModule,
+    CareerModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],
