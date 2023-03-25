@@ -121,6 +121,21 @@ model ContactusResponse {
   message   String?
 }
 
+model VisitorForm {
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  mobileNumber   String
+  plantName       String
+  reason         String
+  date           String
+  pwId           String?
+  numberOfPeople  String?
+  typeOfVisit     String
+  company   String?
+}
 
 // Career Table
 

@@ -15,6 +15,7 @@ import { ApplicantsModule } from './applicants/applicants.module';
 import { ProjectsModule } from './projects/projects.module';
 import { ContactUsRepsonsesModule } from './contact-us-repsonses/contact-us-repsonses.module';
 import { CareerModule } from './career/career.module';
+import { VisitorFormModule } from './visitor-form/visitor-form.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { CareerModule } from './career/career.module';
     ProjectsModule,
     ContactUsRepsonsesModule,
     CareerModule,
+    VisitorFormModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],

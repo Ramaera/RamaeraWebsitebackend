@@ -24,6 +24,7 @@ const applicants_module_1 = require("./applicants/applicants.module");
 const projects_module_1 = require("./projects/projects.module");
 const contact_us_repsonses_module_1 = require("./contact-us-repsonses/contact-us-repsonses.module");
 const career_module_1 = require("./career/career.module");
+const visitor_form_module_1 = require("./visitor-form/visitor-form.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -46,6 +47,7 @@ AppModule = __decorate([
             projects_module_1.ProjectsModule,
             contact_us_repsonses_module_1.ContactUsRepsonsesModule,
             career_module_1.CareerModule,
+            visitor_form_module_1.VisitorFormModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, app_resolver_1.AppResolver],

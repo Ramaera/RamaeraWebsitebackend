@@ -146,6 +146,31 @@ input CreateProjectInput {
   yourProjectType: String
 }
 
+input CreateVisitorFormInput {
+  """Date"""
+  date: String!
+
+  """Email"""
+  email: String!
+
+  """Mobile Number"""
+  mobileNumber: String!
+
+  """Name"""
+  name: String!
+  numberOfPeople: String
+
+  """plant Name"""
+  plantName: String!
+  pwId: String
+
+  """Reason"""
+  reason: String!
+
+  """Designatation"""
+  typeOfVisit: String!
+}
+
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
@@ -173,6 +198,7 @@ type Mutation {
   createApplication(data: CreateApplicantInput!): Applicant!
   createContactUsResponse(data: CreateContactUsRepsonseInput!): ContactUsRepsonse!
   createJob(data: CreateCareerInput!): Career!
+  createVisitorForm(data: CreateVisitorFormInput!): VisitorForm!
   login(data: LoginInput!): Auth!
   refreshToken(token: JWT!): Token!
   removeCareer(id: Int!): Career!
@@ -231,6 +257,7 @@ type Query {
   applicants: [Applicant!]!
   career_find_one(id: Int!): Career!
   contactUsRepsonses: [ContactUsRepsonse!]!
+  findAllVisitorsList: [VisitorForm!]!
 }
 
 """User role"""
@@ -292,4 +319,36 @@ type User {
 
   """Identifies the date and time when the object was last updated."""
   updatedAt: DateTime!
+}
+
+type VisitorForm {
+  """Date"""
+  date: String!
+
+  """Email"""
+  email: String!
+
+  """Id"""
+  id: String!
+
+  """Mobile Number"""
+  mobileNumber: String!
+
+  """Id"""
+  name: String!
+
+  """number of People"""
+  numberOfPeople: String
+
+  """plant Name"""
+  plantName: String!
+
+  """pwId"""
+  pwId: String
+
+  """Reason"""
+  reason: String!
+
+  """Designatation"""
+  typeOfVisit: String!
 }
