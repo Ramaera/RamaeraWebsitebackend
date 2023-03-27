@@ -4,23 +4,23 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 export class CreateVisitorFormInput {
 
 
-  @Field(() => String, { description: 'Name' })
+  @Field(() => String,{ description: 'Name',nullable:true })
   name: string;
 
   @Field(() => String, { description: 'Email' })
-  email: string;
+  email?: string;
 
   @Field(() => String, { description: 'Mobile Number' })
-  mobileNumber: string;
+  mobileNumber?: string;
 
   @Field(() => String, { description: 'plant Name' })
-  plantName: string;
+  plantName?: string;
 
   @Field(() => String, { description: 'Reason' })
-  reason: string;
+  reason?: string;
 
   @Field(() => String, { description: 'Date' })
-  date: string;
+  date?: string;
 
   @Field(() => String, { nullable:true })
   pwId?: string
@@ -29,9 +29,9 @@ export class CreateVisitorFormInput {
   numberOfPeople?: string
 
   @Field(() => String, { description: 'type of Visit' })
-  typeOfVisit: string;
+  typeOfVisit?: string;
 
   @Field(() => String, { description: 'Designatation' })
-  address: string;
+  address?: string;
 
 }

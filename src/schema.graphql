@@ -147,28 +147,31 @@ input CreateProjectInput {
 }
 
 input CreateVisitorFormInput {
+  """Designatation"""
+  address: String
+
   """Date"""
-  date: String!
+  date: String
 
   """Email"""
-  email: String!
+  email: String
 
   """Mobile Number"""
-  mobileNumber: String!
+  mobileNumber: String
 
   """Name"""
-  name: String!
+  name: String
   numberOfPeople: String
 
   """plant Name"""
-  plantName: String!
+  plantName: String
   pwId: String
 
   """Reason"""
-  reason: String!
+  reason: String
 
-  """Designatation"""
-  typeOfVisit: String!
+  """type of Visit"""
+  typeOfVisit: String
 }
 
 """
@@ -322,33 +325,36 @@ type User {
 }
 
 type VisitorForm {
+  """Address"""
+  address: String
+
   """Date"""
-  date: String!
+  date: String
 
   """Email"""
-  email: String!
+  email: String
 
   """Id"""
   id: String!
 
   """Mobile Number"""
-  mobileNumber: String!
+  mobileNumber: String
 
   """Id"""
-  name: String!
+  name: String
 
   """number of People"""
   numberOfPeople: String
 
   """plant Name"""
-  plantName: String!
+  plantName: String
 
   """pwId"""
   pwId: String
 
   """Reason"""
-  reason: String!
+  reason: String
 
-  """Designatation"""
-  typeOfVisit: String!
+  """type of visit"""
+  typeOfVisit: String
 }

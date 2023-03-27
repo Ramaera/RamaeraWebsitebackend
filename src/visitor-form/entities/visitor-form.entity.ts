@@ -6,23 +6,23 @@ export class VisitorForm {
   id: string;
 
   @Field(() => String, { description: 'Id' })
-  name: string;
+  name?: string;
   @Field(() => String, { description: 'Email' })
-  email: string;
+  email?: string;
   @Field(() => String, { description: 'Mobile Number' })
-  mobileNumber: string;
+  mobileNumber?: string;
   @Field(() => String, { description: 'plant Name' })
-  plantName: string;
+  plantName?: string;
   @Field(() => String, { description: 'Reason' })
-  reason: string;
+  reason?: string;
   @Field(() => String, { description: 'Date' })
-  date: string;
+  date?: string;
   @Field(() => String, { description: 'pwId' })
   pwId?: string
   @Field(() => String, { description: 'number of People' })
   numberOfPeople?: string
   @Field(() => String, { description: 'type of visit' })
-  typeOfVisit: string;
+  typeOfVisit?: string;
   @Field(() => String, { description: 'Address' })
-  address: string;
+  address?: string;
 }

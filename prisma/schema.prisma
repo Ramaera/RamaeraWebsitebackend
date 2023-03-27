@@ -126,15 +126,15 @@ model VisitorForm {
   updatedAt DateTime @updatedAt
   id        String   @id @default(cuid())
   name      String
-  address   String
-  email     String
-  mobileNumber   String
-  plantName       String
-  reason         String
-  date           String
+  address   String?
+  email     String?
+  mobileNumber   String?
+  plantName       String?
+  reason         String?
+  date           String?
   pwId           String?
   numberOfPeople  String?
-  typeOfVisit     String
+  typeOfVisit     String?
   company   String?
 
 }
