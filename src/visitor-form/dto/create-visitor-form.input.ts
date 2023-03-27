@@ -28,7 +28,10 @@ export class CreateVisitorFormInput {
   @Field(() => String, { nullable:true })
   numberOfPeople?: string
 
-  @Field(() => String, { description: 'Designatation' })
+  @Field(() => String, { description: 'type of Visit' })
   typeOfVisit: string;
+
+  @Field(() => String, { description: 'Designatation' })
+  address: string;
 
 }

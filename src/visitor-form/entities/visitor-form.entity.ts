@@ -21,6 +21,8 @@ export class VisitorForm {
   pwId?: string
   @Field(() => String, { description: 'number of People' })
   numberOfPeople?: string
-  @Field(() => String, { description: 'Designatation' })
+  @Field(() => String, { description: 'type of visit' })
   typeOfVisit: string;
+  @Field(() => String, { description: 'Address' })
+  address: string;
 }
