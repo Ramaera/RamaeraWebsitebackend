@@ -25,6 +25,7 @@ const projects_module_1 = require("./projects/projects.module");
 const contact_us_repsonses_module_1 = require("./contact-us-repsonses/contact-us-repsonses.module");
 const career_module_1 = require("./career/career.module");
 const visitor_form_module_1 = require("./visitor-form/visitor-form.module");
+const planetsera_rewards_module_1 = require("./planetsera-rewards/planetsera-rewards.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -48,6 +49,7 @@ AppModule = __decorate([
             contact_us_repsonses_module_1.ContactUsRepsonsesModule,
             career_module_1.CareerModule,
             visitor_form_module_1.VisitorFormModule,
+            planetsera_rewards_module_1.PlanetseraRewardsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, app_resolver_1.AppResolver],

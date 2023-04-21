@@ -5,7 +5,7 @@ services:
     container_name: postgresdata
     restart: always
     ports:
-      - '5432:5432'
+      - '5434:5432'
     env_file:
       - .env
     volumes:

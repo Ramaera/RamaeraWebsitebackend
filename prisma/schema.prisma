@@ -153,6 +153,18 @@ model Career{
   jobStatus       JOBSTATUS?
 }
 
+
+model PlanetsEraRewardCode{
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  id              String   @id @default(cuid())
+  name            String 
+  email           String 
+  phone           String
+  password        String
+  rewardCode      String
+}
+
 enum JOBSTATUS {
   ACTIVE
   COMPLETED
