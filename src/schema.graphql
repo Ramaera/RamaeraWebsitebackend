@@ -102,6 +102,14 @@ input CreateContactUsRepsonseInput {
   name: String!
 }
 
+input CreatePlanetseraRewardInput {
+  email: String!
+  name: String!
+  password: String!
+  phone: String!
+  rewardCode: String!
+}
+
 input CreateProjectInput {
   City: String
   Country: String
@@ -201,13 +209,24 @@ type Mutation {
   createApplication(data: CreateApplicantInput!): Applicant!
   createContactUsResponse(data: CreateContactUsRepsonseInput!): ContactUsRepsonse!
   createJob(data: CreateCareerInput!): Career!
+  createPlanetseraReward(createPlanetseraRewardInput: CreatePlanetseraRewardInput!): PlanetseraReward!
   createVisitorForm(data: CreateVisitorFormInput!): VisitorForm!
   login(data: LoginInput!): Auth!
   refreshToken(token: JWT!): Token!
   removeCareer(id: Int!): Career!
+  removePlanetseraReward(id: Int!): PlanetseraReward!
   signup(data: SignupInput!): Auth!
   updateJob(data: UpdateCareerInput!): Career!
+  updatePlanetseraReward(updatePlanetseraRewardInput: UpdatePlanetseraRewardInput!): PlanetseraReward!
   updateUser(data: UpdateUserInput!): User!
+}
+
+type PlanetseraReward {
+  email: String!
+  name: String!
+  password: String!
+  phone: String!
+  rewardCode: String!
 }
 
 type Project {
@@ -261,6 +280,8 @@ type Query {
   career_find_one(id: Int!): Career!
   contactUsRepsonses: [ContactUsRepsonse!]!
   findAllVisitorsList: [VisitorForm!]!
+  planetseraReward(id: Int!): PlanetseraReward!
+  planetseraRewards: [PlanetseraReward!]!
 }
 
 """User role"""
@@ -305,6 +326,15 @@ input UpdateCareerInput {
 
   """Job Type"""
   jobType: String
+}
+
+input UpdatePlanetseraRewardInput {
+  email: String
+  id: Int!
+  name: String
+  password: String
+  phone: String
+  rewardCode: String
 }
 
 input UpdateUserInput {

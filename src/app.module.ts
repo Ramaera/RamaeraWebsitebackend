@@ -16,6 +16,7 @@ import { ProjectsModule } from './projects/projects.module';
 import { ContactUsRepsonsesModule } from './contact-us-repsonses/contact-us-repsonses.module';
 import { CareerModule } from './career/career.module';
 import { VisitorFormModule } from './visitor-form/visitor-form.module';
+import { PlanetseraRewardsModule } from './planetsera-rewards/planetsera-rewards.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { VisitorFormModule } from './visitor-form/visitor-form.module';
     ContactUsRepsonsesModule,
     CareerModule,
     VisitorFormModule,
+    PlanetseraRewardsModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],
