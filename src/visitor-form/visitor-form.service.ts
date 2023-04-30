@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Args } from '@nestjs/graphql';
 import { PrismaService } from 'nestjs-prisma';
 import { CreateVisitorFormInput } from './dto/create-visitor-form.input';
@@ -6,20 +6,33 @@ import { CreateVisitorFormInput } from './dto/create-visitor-form.input';
 
 @Injectable()
 export class VisitorFormService {
-
-  constructor(    private prisma: PrismaService){}
-
-
-
+  constructor(private prisma: PrismaService) {}
 
   async create(payload: CreateVisitorFormInput) {
     return this.prisma.visitorForm.create({
-      data:payload
-    })
+      data: payload,
+    });
+  }
+
+  async createGeneralMeeting(payload: CreateVisitorFormInput) {
+    const resp = await this.prisma.visitorForm.findFirst({
+      where: {
+        pwId: payload.pwId,
+      },
+    });
+    if (resp) {
+      throw new NotFoundException(
+        `Response is Already Submitted For PW_Id: ${payload.pwId}`
+      );
+    }
+
+    return this.prisma.visitorForm.create({
+      data: payload,
+    });
   }
 
   findAll() {
-    return this.prisma.visitorForm.findMany({})
+    return this.prisma.visitorForm.findMany({});
   }
 
   // findOne(id: number) {

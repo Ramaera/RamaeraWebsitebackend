@@ -208,6 +208,7 @@ type Mutation {
   changePassword(data: ChangePasswordInput!): User!
   createApplication(data: CreateApplicantInput!): Applicant!
   createContactUsResponse(data: CreateContactUsRepsonseInput!): ContactUsRepsonse!
+  createGeneralMeetingVisitorForm(data: CreateVisitorFormInput!): VisitorForm!
   createJob(data: CreateCareerInput!): Career!
   createPlanetseraReward(createPlanetseraRewardInput: CreatePlanetseraRewardInput!): PlanetseraReward!
   createVisitorForm(data: CreateVisitorFormInput!): VisitorForm!

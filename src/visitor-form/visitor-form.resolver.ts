@@ -13,6 +13,11 @@ export class VisitorFormResolver {
     return this.visitorFormService.create(data);
   }
 
+  @Mutation(() => VisitorForm)
+  createGeneralMeetingVisitorForm(@Args('data') data: CreateVisitorFormInput) {
+    return this.visitorFormService.createGeneralMeeting(data);
+  }
+
   @Query(() => [VisitorForm])
   findAllVisitorsList() {
     return this.visitorFormService.findAll();
