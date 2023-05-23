@@ -13,6 +13,7 @@ type Applicant {
   email: String!
   extraInfo: String
   firmName: String!
+  id: String
   mobileNumber: String!
   name: String
 
@@ -85,6 +86,7 @@ input CreateApplicantInput {
   State: String
   applicantAddress: String
   applicantType: ApplicantType
+  applicationId: String
   email: String
   extraInfo: String
   firmName: String
@@ -223,6 +225,7 @@ input LoginInput {
 
 type Mutation {
   CreateProject(data: CreateProjectInput!): Project!
+  UpdateApplication(data: CreateApplicantInput!): Applicant!
   changePassword(data: ChangePasswordInput!): User!
   createApplication(data: CreateApplicantInput!): Applicant!
   createContactUsResponse(data: CreateContactUsRepsonseInput!): ContactUsRepsonse!

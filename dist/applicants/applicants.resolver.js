@@ -34,6 +34,20 @@ let ApplicantsResolver = class ApplicantsResolver {
         }
         catch (err) { }
     }
+    async UpdateApplication(payload) {
+        try {
+            const newApplication = this.prisma.applicationForDistributionSystem.update({
+                where: {
+                    id: payload.applicationId,
+                },
+                data: {
+                    email: payload.email,
+                },
+            });
+            return newApplication;
+        }
+        catch (err) { }
+    }
     async findAll() {
         return this.prisma.applicationForDistributionSystem.findMany({});
     }
@@ -45,6 +59,13 @@ __decorate([
     __metadata("design:paramtypes", [create_applicant_input_1.CreateApplicantInput]),
     __metadata("design:returntype", Promise)
 ], ApplicantsResolver.prototype, "createApplication", null);
+__decorate([
+    (0, graphql_1.Mutation)(() => applicant_entity_1.Applicant),
+    __param(0, (0, graphql_1.Args)('data')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_applicant_input_1.CreateApplicantInput]),
+    __metadata("design:returntype", Promise)
+], ApplicantsResolver.prototype, "UpdateApplication", null);
 __decorate([
     (0, common_1.UseGuards)(gql_auth_guard_1.GqlAuthGuard),
     (0, graphql_1.Query)(() => [applicant_entity_1.Applicant], { name: 'applicants' }),

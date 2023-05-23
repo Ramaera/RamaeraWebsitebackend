@@ -14,7 +14,6 @@ export class ApplicantsResolver {
     private readonly prisma: PrismaService
   ) {}
 
-
   @Mutation(() => Applicant)
   async createApplication(
     @Args('data')
@@ -32,14 +31,30 @@ export class ApplicantsResolver {
     } catch (err) {}
   }
 
+  @Mutation(() => Applicant)
+  async UpdateApplication(
+    @Args('data')
+    payload: CreateApplicantInput
+  ) {
+    try {
+      const newApplication =
+        this.prisma.applicationForDistributionSystem.update({
+          where: {
+            id: payload.applicationId,
+          },
+          data: {
+            email: payload.email,
+          },
+        });
 
+      return newApplication;
+    } catch (err) {}
+  }
 
   @UseGuards(GqlAuthGuard)
   @Query(() => [Applicant], { name: 'applicants' })
   async findAll() {
-    return this.prisma.applicationForDistributionSystem.findMany({})
+    return this.prisma.applicationForDistributionSystem.findMany({});
     // return this.applicantsService.getAllUser();
   }
-
-
 }

@@ -3,42 +3,37 @@ import { ApplicantType, STATUS } from '@prisma/client';
 
 @InputType()
 export class CreateApplicantInput {
+  @Field(() => String, { nullable: true })
+  applicationId: string;
 
+  @Field(() => String, { nullable: true })
+  name: string;
 
-  @Field(() => String, { nullable:true })
-  name: string
+  @Field(() => String, { nullable: true })
+  email: string;
 
-  @Field(() => String, { nullable:true })
-  email: string
+  @Field(() => String, { nullable: true })
+  mobileNumber: string;
 
-  @Field(() => String,{ nullable:true })
-  mobileNumber : string
+  @Field(() => String, { nullable: true })
+  applicantAddress: string;
 
-  @Field(() => String, { nullable:true })
-  applicantAddress:string
+  @Field(() => ApplicantType, { nullable: true })
+  applicantType: ApplicantType;
 
+  @Field(() => String, { nullable: true })
+  firmName: string;
 
-  @Field(() => ApplicantType, { nullable:true})
-  applicantType : ApplicantType
+  @Field(() => String, { nullable: true })
+  State: string;
 
-  @Field(() => String, { nullable:true})
-  firmName: string
+  @Field(() => String, { nullable: true })
+  District: string;
 
-  @Field(() => String, { nullable:true })
-  State:string
-
-  @Field(() => String, { nullable:true })
-  District : string  
-
-  @Field(() => String, { nullable:true })
-  extraInfo? : string  
+  @Field(() => String, { nullable: true })
+  extraInfo?: string;
 }
 
-
-registerEnumType(ApplicantType,
-  {
-  name:'ApplicantType',
-  }
-)
-
-
+registerEnumType(ApplicantType, {
+  name: 'ApplicantType',
+});

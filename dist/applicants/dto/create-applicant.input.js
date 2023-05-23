@@ -20,6 +20,10 @@ let CreateApplicantInput = class CreateApplicantInput {
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true }),
     __metadata("design:type", String)
+], CreateApplicantInput.prototype, "applicationId", void 0);
+__decorate([
+    (0, graphql_1.Field)(() => String, { nullable: true }),
+    __metadata("design:type", String)
 ], CreateApplicantInput.prototype, "name", void 0);
 __decorate([
     (0, graphql_1.Field)(() => String, { nullable: true }),

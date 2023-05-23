@@ -4,6 +4,8 @@ import { ApplicantType, STATUS } from '@prisma/client';
 @ObjectType()
 export class Applicant {
   @Field(() => String, { nullable: true })
+  id: string;
+  @Field(() => String, { nullable: true })
   name: string;
 
   @Field(() => String)
