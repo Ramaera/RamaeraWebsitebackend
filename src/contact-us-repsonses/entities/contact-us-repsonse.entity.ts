@@ -6,16 +6,25 @@ export class ContactUsRepsonse {
   name: string;
 
   @Field(() => String)
-  email:string
+  email: string;
 
   @Field(() => String)
-  company:string
+  company: string;
 
   @Field(() => String)
-  Subject:string
+  Subject: string;
 
   @Field(() => String)
-  message: string
+  message: string;
 
+  @Field({
+    description: 'Identifies the date and time when the object was created.',
+  })
+  createdAt: Date;
 
+  @Field({
+    description:
+      'Identifies the date and time when the object was last updated.',
+  })
+  updatedAt: Date;
 }

@@ -3,17 +3,28 @@ import { ObjectType, Field, Int } from '@nestjs/graphql';
 @ObjectType()
 export class PlanetseraReward {
   @Field()
-  name:string
+  name: string;
 
   @Field()
-  email:string
+  email: string;
 
   @Field()
-  phone:string
+  phone: string;
 
   @Field()
-  password:string
+  password: string;
 
   @Field()
-  rewardCode:string
+  rewardCode: string;
+
+  @Field({
+    description: 'Identifies the date and time when the object was created.',
+  })
+  createdAt: Date;
+
+  @Field({
+    description:
+      'Identifies the date and time when the object was last updated.',
+  })
+  updatedAt: Date;
 }

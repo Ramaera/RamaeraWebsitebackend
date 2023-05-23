@@ -7,11 +7,17 @@ type Applicant {
   State: String!
   applicantAddress: String!
   applicantType: ApplicantType!
+
+  """Identifies the date and time when the object was created."""
+  createdAt: DateTime!
   email: String!
   extraInfo: String
   firmName: String!
   mobileNumber: String!
   name: String
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
 }
 
 enum ApplicantType {
@@ -29,6 +35,9 @@ type Auth {
 }
 
 type Career {
+  """Identifies the date and time when the object was created."""
+  createdAt: DateTime!
+
   """Job Department"""
   department: String!
 
@@ -47,6 +56,9 @@ type Career {
 
   """Job Type"""
   jobType: String!
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
 }
 
 input ChangePasswordInput {
@@ -57,9 +69,15 @@ input ChangePasswordInput {
 type ContactUsRepsonse {
   Subject: String!
   company: String!
+
+  """Identifies the date and time when the object was created."""
+  createdAt: DateTime!
   email: String!
   message: String!
   name: String!
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
 }
 
 input CreateApplicantInput {
@@ -223,11 +241,16 @@ type Mutation {
 }
 
 type PlanetseraReward {
+  """Identifies the date and time when the object was created."""
+  createdAt: DateTime!
   email: String!
   name: String!
   password: String!
   phone: String!
   rewardCode: String!
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
 }
 
 type Project {
@@ -237,6 +260,9 @@ type Project {
   brief: String!
   businessModel: String!
   competitiveLandscape: String!
+
+  """Identifies the date and time when the object was created."""
+  createdAt: DateTime!
   currentTransaction: String!
   director: [String!]
   dob: String!
@@ -267,6 +293,9 @@ type Project {
   thanksNote: String!
   twitterProfile: String!
   typeOfPartnership: String!
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
   websiteURL: String!
   youAre: String!
   yourProduct: String!
@@ -359,6 +388,9 @@ type VisitorForm {
   """Address"""
   address: String
 
+  """Identifies the date and time when the object was created."""
+  createdAt: DateTime!
+
   """Date"""
   date: String
 
@@ -388,4 +420,7 @@ type VisitorForm {
 
   """type of visit"""
   typeOfVisit: String
+
+  """Identifies the date and time when the object was last updated."""
+  updatedAt: DateTime!
 }

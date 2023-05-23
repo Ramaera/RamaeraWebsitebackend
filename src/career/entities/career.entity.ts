@@ -1,9 +1,8 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { JOBSTATUS, } from '@prisma/client';
+import { JOBSTATUS } from '@prisma/client';
 
 @ObjectType()
 export class Career {
-
   @Field(() => String, { description: 'id' })
   id: string;
 
@@ -24,4 +23,15 @@ export class Career {
 
   @Field()
   jobStatus: string;
+
+  @Field({
+    description: 'Identifies the date and time when the object was created.',
+  })
+  createdAt: Date;
+
+  @Field({
+    description:
+      'Identifies the date and time when the object was last updated.',
+  })
+  updatedAt: Date;
 }

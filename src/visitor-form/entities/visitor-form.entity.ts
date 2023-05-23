@@ -18,11 +18,22 @@ export class VisitorForm {
   @Field(() => String, { description: 'Date' })
   date?: string;
   @Field(() => String, { description: 'pwId' })
-  pwId?: string
+  pwId?: string;
   @Field(() => String, { description: 'number of People' })
-  numberOfPeople?: string
+  numberOfPeople?: string;
   @Field(() => String, { description: 'type of visit' })
   typeOfVisit?: string;
   @Field(() => String, { description: 'Address' })
   address?: string;
+
+  @Field({
+    description: 'Identifies the date and time when the object was created.',
+  })
+  createdAt: Date;
+
+  @Field({
+    description:
+      'Identifies the date and time when the object was last updated.',
+  })
+  updatedAt: Date;
 }
