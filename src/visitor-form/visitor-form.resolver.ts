@@ -14,6 +14,11 @@ export class VisitorFormResolver {
   }
 
   @Mutation(() => VisitorForm)
+  UpdateVisitorForm(@Args('data') data: CreateVisitorFormInput) {
+    return this.visitorFormService.update(data);
+  }
+
+  @Mutation(() => VisitorForm)
   createGeneralMeetingVisitorForm(@Args('data') data: CreateVisitorFormInput) {
     return this.visitorFormService.createGeneralMeeting(data);
   }

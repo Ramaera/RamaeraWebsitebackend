@@ -14,6 +14,18 @@ export class VisitorFormService {
     });
   }
 
+  async update(payload: CreateVisitorFormInput) {
+    return this.prisma.visitorForm.update({
+      where: {
+        id: payload.visitorID,
+      },
+
+      data: {
+        email: payload.email,
+      },
+    });
+  }
+
   async createGeneralMeeting(payload: CreateVisitorFormInput) {
     const resp = await this.prisma.visitorForm.findFirst({
       where: {

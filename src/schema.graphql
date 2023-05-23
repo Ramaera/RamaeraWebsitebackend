@@ -200,6 +200,9 @@ input CreateVisitorFormInput {
 
   """type of Visit"""
   typeOfVisit: String
+
+  """Name"""
+  visitorID: String
 }
 
 """
@@ -226,6 +229,7 @@ input LoginInput {
 type Mutation {
   CreateProject(data: CreateProjectInput!): Project!
   UpdateApplication(data: CreateApplicantInput!): Applicant!
+  UpdateVisitorForm(data: CreateVisitorFormInput!): VisitorForm!
   changePassword(data: ChangePasswordInput!): User!
   createApplication(data: CreateApplicantInput!): Applicant!
   createContactUsResponse(data: CreateContactUsRepsonseInput!): ContactUsRepsonse!
