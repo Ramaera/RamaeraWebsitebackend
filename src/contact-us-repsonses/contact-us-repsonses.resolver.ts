@@ -4,13 +4,14 @@ import { ContactUsRepsonse } from './entities/contact-us-repsonse.entity';
 import { CreateContactUsRepsonseInput } from './dto/create-contact-us-repsonse.input';
 // import { UpdateContactUsRepsonseInput } from './dto/update-contact-us-repsonse.input';
 import { PrismaService } from 'nestjs-prisma';
+import { error } from 'console';
 
 @Resolver(() => ContactUsRepsonse)
 export class ContactUsRepsonsesResolver {
   constructor(
     private readonly contactUsRepsonsesService: ContactUsRepsonsesService,
     private readonly prisma: PrismaService
-    ) {}
+  ) {}
 
   @Mutation(() => ContactUsRepsonse)
   async createContactUsResponse(
@@ -18,20 +19,20 @@ export class ContactUsRepsonsesResolver {
     payload: CreateContactUsRepsonseInput
   ) {
     try {
-      const newApplication =
-        this.prisma.contactusResponse.create({
-          data: {
-            ...payload,
-          },
-        });
+      const newApplication = this.prisma.contactusResponse.create({
+        data: {
+          ...payload,
+        },
+      });
 
       return newApplication;
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   @Query(() => [ContactUsRepsonse], { name: 'contactUsRepsonses' })
   findAll() {
     return this.contactUsRepsonsesService.findAll();
   }
-
 }
