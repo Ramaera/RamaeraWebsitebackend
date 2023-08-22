@@ -51,6 +51,18 @@ model SalesEnquiry {
   remarks      String
 }
 
+model POSEnquiry {
+  id                            Int      @id @default(autoincrement())
+  createdAt                     DateTime @default(now())
+  updatedAt                     DateTime @updatedAt
+  name                          String?
+  email                         String?
+  mobileNumber                  String?
+  pwid                          String?
+  Number_of_persons_in_POS_City String?
+  CityName                      String?
+}
+
 enum Role {
   ADMIN
   HR

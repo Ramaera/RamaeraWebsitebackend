@@ -39,6 +39,18 @@ Table SalesEnquiry {
   remarks String [not null]
 }
 
+Table POSEnquiry {
+  id Int [pk, increment]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  name String
+  email String
+  mobileNumber String
+  pwid String
+  Number_of_persons_in_POS_City String
+  CityName String
+}
+
 Table Project {
   id String [pk]
   createdAt DateTime [default: `now()`, not null]
