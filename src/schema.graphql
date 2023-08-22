@@ -130,6 +130,26 @@ input CreatePlanetseraRewardInput {
   rewardCode: String!
 }
 
+input CreatePosenquiryInput {
+  """Example field (placeholder)"""
+  CityName: String
+
+  """Example field (placeholder)"""
+  Number_of_persons_in_POS_City: String
+
+  """Example field (placeholder)"""
+  email: String
+
+  """Example field (placeholder)"""
+  mobileNumber: String
+
+  """Example field (placeholder)"""
+  name: String
+
+  """Example field (placeholder)"""
+  pwid: String
+}
+
 input CreateProjectInput {
   City: String
   Country: String
@@ -253,6 +273,7 @@ type Mutation {
   createGeneralMeetingVisitorForm(data: CreateVisitorFormInput!): VisitorForm!
   createJob(data: CreateCareerInput!): Career!
   createPlanetseraReward(createPlanetseraRewardInput: CreatePlanetseraRewardInput!): PlanetseraReward!
+  createPosenquiry(createPosenquiryInput: CreatePosenquiryInput!): Posenquiry!
   createSalesEnquiry(data: CreateSalesEnquiryInput!): SalesEnquiry!
   createVisitorForm(data: CreateVisitorFormInput!): VisitorForm!
   login(data: LoginInput!): Auth!
@@ -277,6 +298,26 @@ type PlanetseraReward {
 
   """Identifies the date and time when the object was last updated."""
   updatedAt: DateTime!
+}
+
+type Posenquiry {
+  """Example field (placeholder)"""
+  CityName: String!
+
+  """Example field (placeholder)"""
+  Number_of_persons_in_POS_City: String!
+
+  """Example field (placeholder)"""
+  email: String!
+
+  """Example field (placeholder)"""
+  mobileNumber: String!
+
+  """Example field (placeholder)"""
+  name: String!
+
+  """Example field (placeholder)"""
+  pwid: String!
 }
 
 type Project {
@@ -338,6 +379,7 @@ type Query {
   findAllVisitorsList: [VisitorForm!]!
   planetseraReward(id: Int!): PlanetseraReward!
   planetseraRewards: [PlanetseraReward!]!
+  posenquiry: [Posenquiry!]!
   salesEnquiry: [SalesEnquiry!]!
 }
 

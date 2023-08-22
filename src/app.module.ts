@@ -18,6 +18,7 @@ import { CareerModule } from './career/career.module';
 import { VisitorFormModule } from './visitor-form/visitor-form.module';
 import { PlanetseraRewardsModule } from './planetsera-rewards/planetsera-rewards.module';
 import { SalesEnquiryModule } from './sales-enquiry/sales-enquiry.module';
+import { PosenquiryModule } from './posenquiry/posenquiry.module';
 
 @Module({
   imports: [
@@ -43,6 +44,7 @@ import { SalesEnquiryModule } from './sales-enquiry/sales-enquiry.module';
     VisitorFormModule,
     PlanetseraRewardsModule,
     SalesEnquiryModule,
+    PosenquiryModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],
