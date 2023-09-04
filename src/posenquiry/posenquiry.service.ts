@@ -15,7 +15,7 @@ export class PosenquiryService {
         pwid: data.pwid,
         mobileNumber: data.mobileNumber,
         Number_of_persons_in_POS_City: data.Number_of_persons_in_POS_City,
-        CityName: data.Number_of_persons_in_POS_City,
+        CityName: data.CityName,
       },
     });
   }
