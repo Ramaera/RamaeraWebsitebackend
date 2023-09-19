@@ -50,6 +50,7 @@ model SalesEnquiry {
   product      String
   quantity     String
   remarks      String
+  address      String
 }
 
 model POSEnquiry {

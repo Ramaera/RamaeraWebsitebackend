@@ -19,4 +19,7 @@ export class CreateSalesEnquiryInput {
 
   @Field(() => String, { description: 'Remarks from User' })
   remarks: string;
+
+  @Field(() => String, { description: 'Remarks from User' })
+  address: string;
 }

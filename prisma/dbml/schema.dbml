@@ -38,6 +38,7 @@ Table SalesEnquiry {
   product String [not null]
   quantity String [not null]
   remarks String [not null]
+  address String [not null]
 }
 
 Table POSEnquiry {
