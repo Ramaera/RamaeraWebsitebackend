@@ -11,8 +11,11 @@ export class CreateSalesEnquiryInput {
   @Field(() => String, { description: 'Mobile Number of User' })
   mobileNumber: string;
 
-  @Field(() => String, { description: 'Products of User' })
+  @Field(() => String, { description: 'Products' })
   product: string;
+
+  @Field(() => String, { description: 'Quantity of Product' })
+  quantity: string;
 
   @Field(() => String, { description: 'Remarks from User' })
   remarks: string;

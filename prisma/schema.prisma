@@ -48,6 +48,7 @@ model SalesEnquiry {
   email        String
   mobileNumber String
   product      String
+  quantity     String
   remarks      String
 }
 
