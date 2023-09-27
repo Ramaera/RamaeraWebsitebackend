@@ -25,7 +25,11 @@ export class PosenquiryService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} posenquiry`;
+    return this.prisma.pOSEnquiry.findUnique({
+      where: {
+        id,
+      },
+    });
   }
 
   update(id: number, updatePosenquiryInput: UpdatePosenquiryInput) {

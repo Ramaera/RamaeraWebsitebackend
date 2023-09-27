@@ -195,6 +195,9 @@ input CreateProjectInput {
 }
 
 input CreateSalesEnquiryInput {
+  """Remarks from User"""
+  address: String!
+
   """Email of User"""
   email: String!
 
@@ -204,8 +207,11 @@ input CreateSalesEnquiryInput {
   """Name of User"""
   name: String!
 
-  """Products of User"""
+  """Products"""
   product: String!
+
+  """Quantity of Product"""
+  quantity: String!
 
   """Remarks from User"""
   remarks: String!
