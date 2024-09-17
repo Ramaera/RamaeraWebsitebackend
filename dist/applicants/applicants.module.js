@@ -14,7 +14,7 @@ let ApplicantsModule = class ApplicantsModule {
 };
 ApplicantsModule = __decorate([
     (0, common_1.Module)({
-        providers: [applicants_resolver_1.ApplicantsResolver, applicants_service_1.ApplicantsService]
+        providers: [applicants_resolver_1.ApplicantsResolver, applicants_service_1.ApplicantsService],
     })
 ], ApplicantsModule);
 exports.ApplicantsModule = ApplicantsModule;

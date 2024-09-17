@@ -19,6 +19,12 @@ let ApplicantsService = class ApplicantsService {
     async getAllUser() {
         return this.prisma.user.findMany({});
     }
+    async createWaterDistributionApplication(payload) {
+        const applicationData = await this.prisma.applicationForWaterDistributionSystem.create({
+            data: Object.assign({}, payload),
+        });
+        return applicationData;
+    }
 };
 ApplicantsService = __decorate([
     (0, common_1.Injectable)(),

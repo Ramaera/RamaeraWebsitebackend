@@ -187,6 +187,20 @@ model PlanetsEraRewardCode {
   rewardCode String
 }
 
+model ApplicationForWaterDistributionSystem {
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  id         String   @id @default(cuid())
+  name       String
+  mobile     String
+  email      String
+  pwID       String
+  address    String
+  district   String
+  state      String
+  appliedFor String
+}
+
 enum JOBSTATUS {
   ACTIVE
   COMPLETED

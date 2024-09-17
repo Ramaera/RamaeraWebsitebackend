@@ -6,6 +6,8 @@ import { UpdateApplicantInput } from './dto/update-applicant.input';
 import { PrismaService } from 'nestjs-prisma';
 import { UseGuards } from '@nestjs/common';
 import { GqlAuthGuard } from 'src/auth/gql-auth.guard';
+import { WaterApplicant } from './entities/water-applicant.entity';
+import { CreateWaterApplicantInput } from './dto/create-water-application.input';
 
 @Resolver(() => Applicant)
 export class ApplicantsResolver {
@@ -29,6 +31,15 @@ export class ApplicantsResolver {
 
       return newApplication;
     } catch (err) {}
+  }
+
+  @Mutation(() => WaterApplicant)
+  async createWaterDistributionApplication(
+    @Args('data') payload: CreateWaterApplicantInput
+  ) {
+    const waterAppllicantData =
+      await this.applicantsService.createWaterDistributionApplication(payload);
+    return waterAppllicantData;
   }
 
   @Mutation(() => Applicant)

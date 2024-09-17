@@ -248,6 +248,17 @@ input CreateVisitorFormInput {
   visitorID: String
 }
 
+input CreateWaterApplicantInput {
+  address: String
+  appliedFor: String
+  district: String
+  email: String
+  mobile: String
+  name: String
+  pwID: String
+  state: String
+}
+
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
@@ -282,6 +293,7 @@ type Mutation {
   createPosenquiry(createPosenquiryInput: CreatePosenquiryInput!): Posenquiry!
   createSalesEnquiry(data: CreateSalesEnquiryInput!): SalesEnquiry!
   createVisitorForm(data: CreateVisitorFormInput!): VisitorForm!
+  createWaterDistributionApplication(data: CreateWaterApplicantInput!): WaterApplicant!
   login(data: LoginInput!): Auth!
   refreshToken(token: JWT!): Token!
   removeCareer(id: Int!): Career!
@@ -515,4 +527,15 @@ type VisitorForm {
 
   """Identifies the date and time when the object was last updated."""
   updatedAt: DateTime!
+}
+
+type WaterApplicant {
+  State: String
+  address: String
+  appliedFor: String
+  district: String
+  email: String
+  mobile: String
+  name: String
+  pwID: String
 }

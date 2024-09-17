@@ -21,10 +21,10 @@ export class Applicant {
   applicantType: ApplicantType;
 
   @Field(() => String)
-  firmName: String;
+  firmName: string;
 
   @Field(() => String)
-  State: String;
+  State: string;
 
   @Field(() => String)
   District: string;

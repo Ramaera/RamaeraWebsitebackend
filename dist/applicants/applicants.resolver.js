@@ -20,6 +20,8 @@ const create_applicant_input_1 = require("./dto/create-applicant.input");
 const nestjs_prisma_1 = require("nestjs-prisma");
 const common_1 = require("@nestjs/common");
 const gql_auth_guard_1 = require("../auth/gql-auth.guard");
+const water_applicant_entity_1 = require("./entities/water-applicant.entity");
+const create_water_application_input_1 = require("./dto/create-water-application.input");
 let ApplicantsResolver = class ApplicantsResolver {
     constructor(applicantsService, prisma) {
         this.applicantsService = applicantsService;
@@ -33,6 +35,10 @@ let ApplicantsResolver = class ApplicantsResolver {
             return newApplication;
         }
         catch (err) { }
+    }
+    async createWaterDistributionApplication(payload) {
+        const waterAppllicantData = await this.applicantsService.createWaterDistributionApplication(payload);
+        return waterAppllicantData;
     }
     async UpdateApplication(payload) {
         try {
@@ -59,6 +65,13 @@ __decorate([
     __metadata("design:paramtypes", [create_applicant_input_1.CreateApplicantInput]),
     __metadata("design:returntype", Promise)
 ], ApplicantsResolver.prototype, "createApplication", null);
+__decorate([
+    (0, graphql_1.Mutation)(() => water_applicant_entity_1.WaterApplicant),
+    __param(0, (0, graphql_1.Args)('data')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_water_application_input_1.CreateWaterApplicantInput]),
+    __metadata("design:returntype", Promise)
+], ApplicantsResolver.prototype, "createWaterDistributionApplication", null);
 __decorate([
     (0, graphql_1.Mutation)(() => applicant_entity_1.Applicant),
     __param(0, (0, graphql_1.Args)('data')),

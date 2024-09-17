@@ -3,6 +3,6 @@ import { ApplicantsService } from './applicants.service';
 import { ApplicantsResolver } from './applicants.resolver';
 
 @Module({
-  providers: [ApplicantsResolver, ApplicantsService]
+  providers: [ApplicantsResolver, ApplicantsService],
 })
 export class ApplicantsModule {}

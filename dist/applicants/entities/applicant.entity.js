@@ -15,7 +15,7 @@ const graphql_1 = require("@nestjs/graphql");
 const client_1 = require("@prisma/client");
 let Applicant = class Applicant {
     static _OPENAPI_METADATA_FACTORY() {
-        return { id: { required: true, type: () => String }, name: { required: true, type: () => String }, email: { required: true, type: () => String }, mobileNumber: { required: true, type: () => String }, applicantAddress: { required: true, type: () => String }, applicantType: { required: true, type: () => Object }, firmName: { required: true, type: () => Object }, State: { required: true, type: () => Object }, District: { required: true, type: () => String }, extraInfo: { required: false, type: () => String }, createdAt: { required: true, type: () => Date }, updatedAt: { required: true, type: () => Date } };
+        return { id: { required: true, type: () => String }, name: { required: true, type: () => String }, email: { required: true, type: () => String }, mobileNumber: { required: true, type: () => String }, applicantAddress: { required: true, type: () => String }, applicantType: { required: true, type: () => Object }, firmName: { required: true, type: () => String }, State: { required: true, type: () => String }, District: { required: true, type: () => String }, extraInfo: { required: false, type: () => String }, createdAt: { required: true, type: () => Date }, updatedAt: { required: true, type: () => Date } };
     }
     static _GRAPHQL_METADATA_FACTORY() {
         return {};
