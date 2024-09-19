@@ -199,6 +199,7 @@ model ApplicationForWaterDistributionSystem {
   district   String
   state      String
   appliedFor String
+  gst        String
 }
 
 enum JOBSTATUS {

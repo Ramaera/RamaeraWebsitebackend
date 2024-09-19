@@ -163,6 +163,7 @@ Table ApplicationForWaterDistributionSystem {
   district String [not null]
   state String [not null]
   appliedFor String [not null]
+  gst String [not null]
 }
 
 Enum Role {

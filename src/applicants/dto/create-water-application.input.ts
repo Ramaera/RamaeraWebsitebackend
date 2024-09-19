@@ -25,4 +25,7 @@ export class CreateWaterApplicantInput {
 
   @Field(() => String, { nullable: true })
   appliedFor: string;
+
+  @Field(() => String, { nullable: true })
+  gst: string;
 }
