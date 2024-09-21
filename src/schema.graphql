@@ -249,12 +249,23 @@ input CreateVisitorFormInput {
 }
 
 input CreateWaterApplicantInput {
+  aadhaar: String
   address: String
+  altMobile: String
   appliedFor: String
+  bankAccount: String
+  bankIfsc: String
+  bankName: String
+  distributorArea: String
   district: String
+  dob: String
   email: String
+  firmName: String
+  firmRegistration: String
+  gst: String
   mobile: String
   name: String
+  pincode: String
   pwID: String
   state: String
 }
@@ -530,12 +541,23 @@ type VisitorForm {
 }
 
 type WaterApplicant {
-  State: String
+  aadhaar: String
   address: String
+  altMobile: String
   appliedFor: String
+  bankAccount: String
+  bankIfsc: String
+  bankName: String
+  distributorArea: String
   district: String
+  dob: String
   email: String
+  firmName: String
+  firmRegistration: String
+  gst: String
   mobile: String
   name: String
+  pincode: String
   pwID: String
+  state: String
 }
